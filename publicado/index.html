@@ -42,16 +42,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="fonts/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=2026112602">
   <link rel="stylesheet" href="owl.carousel.min.css">
   <link rel="stylesheet" href="intlTelInput.css">
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-832193848"></script>
+  <!-- 26-nov-2026: una sola carga de gtag.js (arriba); aquí solo se agregan las otras cuentas. -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
     gtag('config', 'AW-832193848');
     gtag('config', 'G-R05L91RDJD');
   </script>
@@ -83,7 +81,6 @@
   </noscript>
 
   
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   </head>
 
 <body>
@@ -122,7 +119,7 @@
           <div class="video-container grow">
               <div class="video-wrapper">
                   <iframe id="vimeo-player" 
-                          src="https://player.vimeo.com/video/866846930?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&controls=0&title=0&byline=0&portrait=0" 
+                          data-src="https://player.vimeo.com/video/866846930?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&controls=0&title=0&byline=0&portrait=0&quality=720p" 
                           frameborder="0" 
                           allow="autoplay; fullscreen; picture-in-picture" 
                           title="Invitación Kommo10x">
@@ -149,7 +146,7 @@
               </h2>
               
               <div class="cta-container">
-                  <a href="https://calendly.com/kommo10x/kommo10x" class="btn-secondary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">¡Agenda Diagnostico!</a>
+                  <a href="https://calendly.com/kommo10x/kommo10x" class="btn-secondary" onclick="gmCalendlyPopup({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">¡Agenda Diagnostico!</a>
                   <a href="https://crmformeta.com/kommo10x/" target="_blank" class="btn-neon-solid">Ver implementación Kommo10X</a>
                   <a href="#precios" class="btn-neon-outline">Ver precios de licencias KommoCRM</a>
               </div>
@@ -170,7 +167,7 @@
             <div class="experience-grid">
                 
                 <div class="experience-image-wrapper" style="height: fit-content;">
-                    <img src="images/equipo-gmarketing-2026.webp" alt="Equipo Gmarketing y Kommo" class="experience-img">
+                    <img src="images/equipo-gmarketing-2026.webp" alt="Equipo Gmarketing y Kommo" class="experience-img" loading="lazy" decoding="async">
                     <div class="neon-border-effect"></div>
                 </div>
 
@@ -192,7 +189,7 @@
                                 </a>
                             </div>
                         </blockquote>
-                        <script async src="//www.instagram.com/embed.js"></script>
+                        <span id="gm-ig-embed"></span>
                     </div>
                 </div>
 
@@ -257,10 +254,10 @@
                             <h3>Chatbot <br>Multi-Agente</h3>
                         </div>
                         <div class="slide-image">
-                            <img src="media/plus1.png" alt="Chatbot CRM">
+                            <img src="media/plus1.png" alt="Chatbot CRM" loading="lazy" decoding="async">
                         </div>
                         <div class="slide-footer">
-                            <a href="https://calendly.com/kommo10x/kommo10x" class="btn-slide-action" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Agenda Diagnostico</a>
+                            <a href="https://calendly.com/kommo10x/kommo10x" class="btn-slide-action" onclick="gmCalendlyPopup({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Agenda Diagnostico</a>
                         </div>
                     </div>
                 </div>
@@ -271,10 +268,10 @@
                             <h3>Centraliza <br>Tus Canales</h3>
                         </div>
                         <div class="slide-image">
-                            <img src="media/plus2.png" alt="Centralización">
+                            <img src="media/plus2.png" alt="Centralización" loading="lazy" decoding="async">
                         </div>
                         <div class="slide-footer">
-                            <a href="https://calendly.com/kommo10x/kommo10x" class="btn-slide-action" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Agenda Diagnostico</a>
+                            <a href="https://calendly.com/kommo10x/kommo10x" class="btn-slide-action" onclick="gmCalendlyPopup({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Agenda Diagnostico</a>
                         </div>
                     </div>
                 </div>
@@ -285,10 +282,10 @@
                             <h3>Gestión <br>Ordenada</h3>
                         </div>
                         <div class="slide-image">
-                            <img src="media/plus3.png" alt="Gestión Eficiente">
+                            <img src="media/plus3.png" alt="Gestión Eficiente" loading="lazy" decoding="async">
                         </div>
                         <div class="slide-footer">
-                            <a href="https://calendly.com/kommo10x/kommo10x" class="btn-slide-action" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Agenda Diagnostico</a>
+                            <a href="https://calendly.com/kommo10x/kommo10x" class="btn-slide-action" onclick="gmCalendlyPopup({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Agenda Diagnostico</a>
                         </div>
                     </div>
                 </div>
@@ -299,10 +296,10 @@
                             <h3>Ahorro de <br>Tiempo</h3>
                         </div>
                         <div class="slide-image">
-                            <img src="media/plus4.png" alt="Automatización">
+                            <img src="media/plus4.png" alt="Automatización" loading="lazy" decoding="async">
                         </div>
                         <div class="slide-footer">
-                            <a href="https://calendly.com/kommo10x/kommo10x" class="btn-slide-action" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Agenda Diagnostico</a>
+                            <a href="https://calendly.com/kommo10x/kommo10x" class="btn-slide-action" onclick="gmCalendlyPopup({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Agenda Diagnostico</a>
                         </div>
                     </div>
                 </div>
@@ -313,10 +310,10 @@
                             <h3>Plantillas <br>Mensajería</h3>
                         </div>
                         <div class="slide-image">
-                            <img src="media/plus5.png" alt="Plantillas WhatsApp">
+                            <img src="media/plus5.png" alt="Plantillas WhatsApp" loading="lazy" decoding="async">
                         </div>
                         <div class="slide-footer">
-                            <a href="https://calendly.com/kommo10x/kommo10x" class="btn-slide-action" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Agenda Diagnostico</a>
+                            <a href="https://calendly.com/kommo10x/kommo10x" class="btn-slide-action" onclick="gmCalendlyPopup({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Agenda Diagnostico</a>
                         </div>
                     </div>
                 </div>
@@ -327,10 +324,10 @@
                             <h3>Métricas <br>Detalladas</h3>
                         </div>
                         <div class="slide-image">
-                            <img src="media/plus6.png" alt="Métricas">
+                            <img src="media/plus6.png" alt="Métricas" loading="lazy" decoding="async">
                         </div>
                         <div class="slide-footer">
-                            <a href="https://calendly.com/kommo10x/kommo10x" class="btn-slide-action" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Agenda Diagnostico</a>
+                            <a href="https://calendly.com/kommo10x/kommo10x" class="btn-slide-action" onclick="gmCalendlyPopup({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Agenda Diagnostico</a>
                         </div>
                     </div>
                 </div>
@@ -341,10 +338,10 @@
                             <h3>Implementación <br>con N8N</h3>
                         </div>
                         <div class="slide-image">
-                            <img src="media/plus7.png" alt="Métricas">
+                            <img src="media/plus7.png" alt="Métricas" loading="lazy" decoding="async">
                         </div>
                         <div class="slide-footer">
-                            <a href="https://calendly.com/kommo10x/kommo10x" class="btn-slide-action" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Agenda Diagnostico</a>
+                            <a href="https://calendly.com/kommo10x/kommo10x" class="btn-slide-action" onclick="gmCalendlyPopup({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Agenda Diagnostico</a>
                         </div>
                     </div>
                 </div>
@@ -409,7 +406,7 @@
                 </div>
                 
                 <div style="text-align: center; position: relative; z-index: 2;">
-                    <a href="javascript:void(0);" class="btn-neon-solid" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kommo10x/kommo10x'});return false;" style="padding: 16px 40px; font-size: 1.1rem;">Consultar mi plan ideal</a>
+                    <a href="javascript:void(0);" class="btn-neon-solid" onclick="gmCalendlyPopup({url: 'https://calendly.com/kommo10x/kommo10x'});return false;" style="padding: 16px 40px; font-size: 1.1rem;">Consultar mi plan ideal</a>
                 </div>
             </div>
         </div>
@@ -610,42 +607,42 @@
             
             <div class="owl-carousel owl-theme" id="owlc5">
                 
-                <div class="item"><div class="integration-card"><img src="media/logo(1).png" alt="Cloudtalk"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(2).png" alt="Dropbox"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(3).png" alt="Zendesk"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(4).png" alt="Calendly"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(5).png" alt="Slack"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(6).png" alt="Stripe"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(7).png" alt="Paypal"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(8).png" alt="Mercado Pago"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(9).png" alt="Mailchimp"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(10).png" alt="Active Campaign"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(11).png" alt="Mandrill"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(12).png" alt="Zapier"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(13).png" alt="WhatsApp"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(14).png" alt="Facebook"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(15).png" alt="Instagram"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(16).png" alt="Telegram"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(18).png" alt="WeChat"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(19).png" alt="Viber"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(20).png" alt="Google My Business"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(21).png" alt="Ring Central"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(22).png" alt="Twilio"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(23).png" alt="Snap Engage"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(24).png" alt="RD Station"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(25).png" alt="Wufoo"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(26).png" alt="Unbounce"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(27).png" alt="Formstack"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(28).png" alt="WordPress"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(29).png" alt="Zoom"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(30).png" alt="Asterisk"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(31).png" alt="Zadarma"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(32).png" alt="Aircall"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(33).png" alt="Api4com"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(34).png" alt="Integración Extra"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(35).webp" alt="N8N"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(36).webp" alt="ChatGTP"></div></div>
-                <div class="item"><div class="integration-card"><img src="media/logo(37).jpg" alt="Antigravity"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(1).png" alt="Cloudtalk" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(2).png" alt="Dropbox" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(3).png" alt="Zendesk" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(4).png" alt="Calendly" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(5).png" alt="Slack" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(6).png" alt="Stripe" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(7).png" alt="Paypal" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(8).png" alt="Mercado Pago" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(9).png" alt="Mailchimp" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(10).png" alt="Active Campaign" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(11).png" alt="Mandrill" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(12).png" alt="Zapier" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(13).png" alt="WhatsApp" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(14).png" alt="Facebook" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(15).png" alt="Instagram" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(16).png" alt="Telegram" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(18).png" alt="WeChat" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(19).png" alt="Viber" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(20).png" alt="Google My Business" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(21).png" alt="Ring Central" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(22).png" alt="Twilio" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(23).png" alt="Snap Engage" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(24).png" alt="RD Station" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(25).png" alt="Wufoo" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(26).png" alt="Unbounce" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(27).png" alt="Formstack" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(28).png" alt="WordPress" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(29).png" alt="Zoom" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(30).png" alt="Asterisk" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(31).png" alt="Zadarma" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(32).png" alt="Aircall" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(33).png" alt="Api4com" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(34).png" alt="Integración Extra" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(35).webp" alt="N8N" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(36).webp" alt="ChatGTP" loading="lazy" decoding="async"></div></div>
+                <div class="item"><div class="integration-card"><img src="media/logo(37).jpg" alt="Antigravity" loading="lazy" decoding="async"></div></div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
                 <a href="#agenda-calendly" class="btn-neon-outline">Verificar si mis herramientas se integran</a>
@@ -739,7 +736,7 @@
                         <p class="plan-note">*Compra mínima de 6 meses.</p>
                     </div>
                     <div class="plan-footer">
-                        <a href="https://calendly.com/kommo10x/kommo10x" class="btn-neon-solid" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Más Info</a>
+                        <a href="https://calendly.com/kommo10x/kommo10x" class="btn-neon-solid" onclick="gmCalendlyPopup({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Más Info</a>
                     </div>
                 </div>
 
@@ -765,7 +762,7 @@
                         <p class="plan-note">*Compra mínima de 6 meses.</p>
                     </div>
                     <div class="plan-footer">
-                        <a href="https://calendly.com/kommo10x/kommo10x" class="btn-neon-solid" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Más Info</a>
+                        <a href="https://calendly.com/kommo10x/kommo10x" class="btn-neon-solid" onclick="gmCalendlyPopup({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Más Info</a>
                     </div>
                 </div>
 
@@ -790,7 +787,7 @@
                         <p class="plan-note">*Compra mínima de 6 meses.</p>
                     </div>
                     <div class="plan-footer">
-                        <a href="https://calendly.com/kommo10x/kommo10x" class="btn-neon-solid" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Más Info</a>
+                        <a href="https://calendly.com/kommo10x/kommo10x" class="btn-neon-solid" onclick="gmCalendlyPopup({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Más Info</a>
                     </div>
                 </div>
 
@@ -814,7 +811,7 @@
                         <p class="plan-note">*Contacta para cotización.</p>
                     </div>
                     <div class="plan-footer">
-                        <a href="https://calendly.com/kommo10x/kommo10x" class="btn-neon-solid" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Más Info</a>
+                        <a href="https://calendly.com/kommo10x/kommo10x" class="btn-neon-solid" onclick="gmCalendlyPopup({url: 'https://calendly.com/kommo10x/kommo10x'});return false;">Más Info</a>
                     </div>
                 </div>
 
@@ -920,9 +917,9 @@
             <div class="owl-carousel owl-theme" id="owlc4">
     
               <div class="item">
-                  <div class="testimonial-card vimeo-card-wrapper" data-vimeo-id="1163762364">
+                  <div class="testimonial-card vimeo-card-wrapper" data-gm-video-id="1163762364">
                       <div class="video-cover poster-layer">
-                          <img src="images/Pinkrose.webp" alt="Caso Éxito Pink Rose">
+                          <img src="images/Pinkrose.webp" alt="Caso Éxito Pink Rose" loading="lazy" decoding="async">
                           <div class="cover-info"><h3>PINK ROSE</h3></div>
                           <div class="play-btn-overlay big-play-button"><div class="play-icon">▶</div></div>
                       </div>
@@ -946,9 +943,9 @@
               </div>
 
               <div class="item">
-                  <div class="testimonial-card vimeo-card-wrapper" data-vimeo-id="1163761711">
+                  <div class="testimonial-card vimeo-card-wrapper" data-gm-video-id="1163761711">
                       <div class="video-cover poster-layer">
-                          <img src="images/zahir.webp" alt="Caso Éxito Tryp">
+                          <img src="images/zahir.webp" alt="Caso Éxito Tryp" loading="lazy" decoding="async">
                           <div class="cover-info"><h3>TRYP BY WINDHAM ZAHIR</h3></div>
                           <div class="play-btn-overlay big-play-button"><div class="play-icon">▶</div></div>
                       </div>
@@ -972,9 +969,9 @@
               </div>
 
               <div class="item">
-                  <div class="testimonial-card vimeo-card-wrapper" data-vimeo-id="1163761528">
+                  <div class="testimonial-card vimeo-card-wrapper" data-gm-video-id="1163761528">
                       <div class="video-cover poster-layer">
-                          <img src="images/move.webp" alt="Caso Éxito Move">
+                          <img src="images/move.webp" alt="Caso Éxito Move" loading="lazy" decoding="async">
                           <div class="cover-info"><h3>MOVE TRAINING</h3></div>
                           <div class="play-btn-overlay big-play-button"><div class="play-icon">▶</div></div>
                       </div>
@@ -998,9 +995,9 @@
               </div>
               
               <div class="item">
-                  <div class="testimonial-card vimeo-card-wrapper" data-vimeo-id="1163762229">
+                  <div class="testimonial-card vimeo-card-wrapper" data-gm-video-id="1163762229">
                       <div class="video-cover poster-layer">
-                          <img src="images/Transmundo.webp" alt="Caso Éxito Transmundo">
+                          <img src="images/Transmundo.webp" alt="Caso Éxito Transmundo" loading="lazy" decoding="async">
                           <div class="cover-info"><h3>INVERSIONES TRANSMUNDO</h3></div>
                           <div class="play-btn-overlay big-play-button"><div class="play-icon">▶</div></div>
                       </div>
@@ -1024,9 +1021,9 @@
               </div>
 
               <div class="item">
-                  <div class="testimonial-card vimeo-card-wrapper" data-vimeo-id="1163762019">
+                  <div class="testimonial-card vimeo-card-wrapper" data-gm-video-id="1163762019">
                       <div class="video-cover poster-layer">
-                          <img src="images/impacto.webp" alt="Caso Éxito Impacto">
+                          <img src="images/impacto.webp" alt="Caso Éxito Impacto" loading="lazy" decoding="async">
                           <div class="cover-info"><h3>IMPACTO SOLAR</h3></div>
                           <div class="play-btn-overlay big-play-button"><div class="play-icon">▶</div></div>
                       </div>
@@ -1050,9 +1047,9 @@
               </div>
 
               <div class="item">
-                  <div class="testimonial-card vimeo-card-wrapper" data-vimeo-id="1163762123">
+                  <div class="testimonial-card vimeo-card-wrapper" data-gm-video-id="1163762123">
                       <div class="video-cover poster-layer">
-                          <img src="images/pgd.webp" alt="Caso Éxito PGD">
+                          <img src="images/pgd.webp" alt="Caso Éxito PGD" loading="lazy" decoding="async">
                           <div class="cover-info"><h3>PROCESO DE GESTIÓN DOCUMENTAL</h3></div>
                           <div class="play-btn-overlay big-play-button"><div class="play-icon">▶</div></div>
                       </div>
@@ -1093,7 +1090,7 @@
           <div class="owl-carousel owl-theme" id="owlc3">
               <div class="item">
                   <div class="team-card-vertical">
-                      <img src="images/1.webp" alt="Carlos Chávez">
+                      <img src="images/1.webp" alt="Carlos Chávez" loading="lazy" decoding="async">
                       <div class="team-overlay">
                           <h3 class="team-name">CARLOS CHÁVEZ</h3>
                           <p class="team-role">Líder de Equipo / Director General</p>
@@ -1103,7 +1100,7 @@
 
               <div class="item">
                   <div class="team-card-vertical">
-                      <img src="images/6.webp" alt="Tatiana Muñoz">
+                      <img src="images/6.webp" alt="Tatiana Muñoz" loading="lazy" decoding="async">
                       <div class="team-overlay">
                           <h3 class="team-name">TATIANA MUÑOZ</h3>
                           <p class="team-role">Diseñadora Gráfica, Editora y Creadora de Contenido</p>
@@ -1113,7 +1110,7 @@
 
               <div class="item">
                   <div class="team-card-vertical">
-                      <img src="images/5.webp" alt="Luisa Marmolejo">
+                      <img src="images/5.webp" alt="Luisa Marmolejo" loading="lazy" decoding="async">
                       <div class="team-overlay">
                           <h3 class="team-name">LUISA MARMOLEJO</h3>
                           <p class="team-role">Coordinadora Administrativa y Financiera</p>
@@ -1123,7 +1120,7 @@
 
               <div class="item">
                   <div class="team-card-vertical">
-                      <img src="images/4.webp" alt="Karen Delgado">
+                      <img src="images/4.webp" alt="Karen Delgado" loading="lazy" decoding="async">
                       <div class="team-overlay">
                           <h3 class="team-name">KAREN DELGADO</h3>
                           <p class="team-role">Ejecutivo de Cuenta en Proyectos CRM</p>
@@ -1133,7 +1130,7 @@
 
               <div class="item">
                   <div class="team-card-vertical">
-                      <img src="images/7.webp" alt="Miguel Usma">
+                      <img src="images/7.webp" alt="Miguel Usma" loading="lazy" decoding="async">
                       <div class="team-overlay">
                           <h3 class="team-name">MIGUEL USMA</h3>
                           <p class="team-role">Diseñador Web e Implementador de CRM</p>
@@ -1143,7 +1140,7 @@
 
               <div class="item">
                   <div class="team-card-vertical">
-                      <img src="images/8.webp" alt="Juan Acosta">
+                      <img src="images/8.webp" alt="Juan Acosta" loading="lazy" decoding="async">
                       <div class="team-overlay">
                           <h3 class="team-name">JUAN ACOSTA</h3>
                           <p class="team-role">Desarrollador Web y Soporte TI</p>
@@ -1165,27 +1162,27 @@
         <div class="partners-grid">
             
             <a href="https://www.facebook.com/business/partner-directory/search?solution_type=campaign_management&id=341949373714772&section=overview" target="_blank" class="partner-circle">
-                <img src="media/face.png" alt="Meta Business Partner">
+                <img src="media/face.png" alt="Meta Business Partner" loading="lazy" decoding="async">
             </a>
 
             <a href="https://www.kommo.com/es/socios/encontrar-socio/gmarketing-s-a-s-gmarketing-usa-llc/" target="_blank" class="partner-circle">
-                <img src="media/sel3.webp" alt="Kommo Partner">
+                <img src="media/sel3.webp" alt="Kommo Partner" loading="lazy" decoding="async">
             </a>
 
             <div class="partner-circle">
-                <img src="media/9a.png" alt="Experiencia 10 Años">
+                <img src="media/9a.png" alt="Experiencia 10 Años" loading="lazy" decoding="async">
             </div>
 
             <div class="partner-circle">
-                <img src="media/400.png" alt="Más de 500 Empresas">
+                <img src="media/400.png" alt="Más de 500 Empresas" loading="lazy" decoding="async">
             </div>
 
             <div class="partner-circle">
-                <img src="media/icono3.webp" alt="Equipo de Líderes">
+                <img src="media/icono3.webp" alt="Equipo de Líderes" loading="lazy" decoding="async">
             </div>
 
             <a href="https://partnersdirectory.withgoogle.com/partners/7290279610" target="_blank" class="partner-circle">
-                <img src="media/icono4.webp" alt="Google Partner">
+                <img src="media/icono4.webp" alt="Google Partner" loading="lazy" decoding="async">
             </a>
 
         </div>
@@ -1200,7 +1197,7 @@
           </div>
           
           <div style="background: rgba(255,255,255,0.03); border-radius: 15px; padding: 10px; border: 1px solid rgba(3, 255, 144, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-              <div class="calendly-inline-widget" data-url="https://calendly.com/kommo10x/kommo10x?hide_gdpr_banner=1&background_color=0e0142&text_color=ffffff&primary_color=03ff90" style="min-width:320px;height:700px;"></div>
+              <div class="calendly-inline-lazy" id="gm-calendly-inline" data-url="https://calendly.com/kommo10x/kommo10x?hide_gdpr_banner=1&background_color=0e0142&text_color=ffffff&primary_color=03ff90" style="min-width:320px;height:700px;"></div>
               </div>
       </div>
   </section>
@@ -1275,7 +1272,7 @@
               
               <a class="contact-card" href="mailto:comercial@gmarketing.co">
                   <div class="contact-icon-top">
-                      <img src="media/iconoemail.webp" alt="Email">
+                      <img src="media/iconoemail.webp" alt="Email" loading="lazy" decoding="async">
                   </div>
                   <div class="contact-text-center">
                       <p>comercial@gmarketing.co</p>
@@ -1284,17 +1281,17 @@
 
               <div class="contact-card location-card">
                   <div class="contact-icon-top">
-                      <img src="media/iconoplace.webp" alt="Ubicación">
+                      <img src="media/iconoplace.webp" alt="Ubicación" loading="lazy" decoding="async">
                   </div>
                   <div class="contact-text-center">
                       <div class="loc-item">
-                          <img src="media/us.png" class="flag" alt="USA"> 
+                          <img src="media/us.png" class="flag" alt="USA" loading="lazy" decoding="async"> 
                           <strong>Gmarketing USA LLC</strong><br>
                           <span class="small-address">Apto 3310, 31 SE 5th St, Miami, FL 33131 🇺🇸</span>
                       </div>
                       <div class="loc-separator"></div>
                       <div class="loc-item">
-                          <img src="media/co.png" class="flag" alt="Colombia"> 
+                          <img src="media/co.png" class="flag" alt="Colombia" loading="lazy" decoding="async"> 
                           <strong>Gmarketing SAS</strong><br>
                           <span class="small-address">Calle 26N # 5AN -50, Cali-Colombia</span>
                       </div>
@@ -1303,7 +1300,7 @@
 
               <a class="contact-card clickllamar" href="tel:+573216319137">
                   <div class="contact-icon-top">
-                      <img src="media/iconotel.webp" alt="Teléfono">
+                      <img src="media/iconotel.webp" alt="Teléfono" loading="lazy" decoding="async">
                   </div>
                   <div class="contact-text-center">
                       <p>+57 321 6319137</p>
@@ -1365,7 +1362,7 @@
     </footer>
 
   <div class="butchatwhatsapp2" id="openPopupBtn" style="cursor: pointer;">
-    <img src="media/wpp.png" alt="Abrir formulario de contacto de WhatsApp">
+    <img src="media/wpp.png" alt="Abrir formulario de contacto de WhatsApp" loading="lazy" decoding="async">
   </div>
 
   <div id="popupprivacy" class="policy-overlay" onclick="popupprivacy()">
@@ -1568,8 +1565,41 @@
   <script src="owl.carousel.js"></script>
   <script src="intlTelInput.min.js"></script>
   <script src="https://player.vimeo.com/api/player.js"></script>
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
   
-  <script src="script.js?v=20261111"></script> 
+  <script src="script.js?v=20261126"></script>
+  <script>
+  /* Carga diferida (26-nov-2026): Calendly, Turnstile, video principal e Instagram
+     se descargan cuando hacen falta, no al abrir la página. */
+  (function(){
+    function addScript(src, id, cb){
+      var s=document.getElementById(id);
+      if(s){ if(s.dataset.loaded){cb&&cb();} else if(cb){s.addEventListener('load',cb);} return; }
+      s=document.createElement('script'); s.src=src; s.id=id; s.async=true;
+      s.addEventListener('load',function(){ s.dataset.loaded='1'; cb&&cb(); });
+      document.body.appendChild(s);
+    }
+    function onNear(el, fn, margin){
+      if(!el) return;
+      if(!('IntersectionObserver' in window)){ fn(); return; }
+      var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ io.disconnect(); fn(); } }); },{rootMargin: margin||'400px'});
+      io.observe(el);
+    }
+    // Calendly
+    window.gmLoadCalendly=function(cb){ addScript('https://assets.calendly.com/assets/external/widget.js','gm-calendly-js',cb); };
+    window.gmCalendlyPopup=function(o){ gmLoadCalendly(function(){ Calendly.initPopupWidget(o); }); return false; };
+    var cal=document.getElementById('gm-calendly-inline');
+    onNear(cal,function(){ gmLoadCalendly(function(){ Calendly.initInlineWidget({url: cal.getAttribute('data-url'), parentElement: cal}); }); },'600px');
+    // Turnstile: al abrir o acercarse al formulario de WhatsApp
+    window.gmLoadTurnstile=function(){ addScript('https://challenges.cloudflare.com/turnstile/v0/api.js','gm-turnstile-js'); };
+    var wbtn=document.getElementById('openPopupBtn');
+    if(wbtn){ ['click','pointerenter','touchstart','focus'].forEach(function(ev){ wbtn.addEventListener(ev,gmLoadTurnstile,{passive:true}); }); }
+    // Video principal
+    var hero=document.getElementById('vimeo-player');
+    onNear(hero,function(){ hero.src=hero.getAttribute('data-src'); if(window.gmInitHero){ gmInitHero(); } },'0px');
+    // Instagram
+    onNear(document.getElementById('gm-ig-embed'),function(){ addScript('https://www.instagram.com/embed.js','gm-ig-js'); },'600px');
+  })();
+  </script>
+ 
 </body>
 </html>

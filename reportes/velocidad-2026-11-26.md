@@ -32,3 +32,27 @@ Puntaje 0-100 (90+ bueno, 50-89 mejorable, menos de 50 malo). LCP: cuándo apare
 3. Videos de Vimeo e Instagram: mostrar una miniatura y cargar el reproductor al dar clic. Ahorro: unos 4 MB.
 4. Imágenes: versiones WebP y tamaños para celular. Ahorro: unos 3 MB.
 5. GTM: revisar las etiquetas del contenedor GTM-TPMR57QR y quitar las que no se usan.
+
+## Después de las mejoras (26-nov-2026, en vivo)
+
+| Medida | Antes (celular) | Después (celular) | Antes (escritorio) | Después (escritorio) |
+|---|---|---|---|---|
+| Puntaje Lighthouse | 39 | 65-66 | 62 | 84-87 |
+| LCP (elemento principal) | 10,2 s | 2,6-2,8 s | 1,7 s | 0,8-1,2 s |
+| Peso de la página | 17 MB | 1,8 MB | 28 MB | 13 MB |
+| Peticiones al cargar | 182-282 | 42-45 | 181 | 78-90 |
+
+Cambios aplicados al home (`publicado/index.html`, `publicado/script.js`, `publicado/style.css`, `publicado/fonts/*.woff2`):
+
+1. **Videos de casos de éxito:** las 6 tarjetas tenían el atributo `data-vimeo-id`, que `player.js` de Vimeo incrusta solo al cargar: se descargaban 6 reproductores (cada uno con su verificación Turnstile de Vimeo) aunque nadie hiciera clic. Se renombró a `data-gm-video-id`; el video se crea al hacer clic, como estaba pensado.
+2. **Calendly:** `widget.js` y el calendario de la sección «Agenda» se cargan cuando la persona se acerca a esa sección o da clic en un botón de agendar (`gmCalendlyPopup`).
+3. **Turnstile del formulario de WhatsApp:** se carga al tocar o pasar el cursor sobre el botón de WhatsApp. Si alguien envía antes de que el token esté listo, el botón muestra «Verificando…» y espera hasta 10 s.
+4. **Video principal:** se carga cuando entra en pantalla (en celular está debajo del primer pantallazo) y a 720p en lugar de 1080p.
+5. **Instagram:** `embed.js` se carga al acercarse a la publicación.
+6. **Imágenes:** `loading="lazy"` en las 68 imágenes que no están en el primer pantallazo.
+7. **Fuentes:** WOFF2 con subconjunto latino (820 KB → 249 KB), con las OTF como respaldo, y `font-display: swap`.
+8. **Etiquetas de Google:** había dos cargas de `gtag.js`; queda una con las tres cuentas configuradas (AW-17840789415, AW-832193848, G-R05L91RDJD). Verificado que las tres siguen enviando datos.
+
+Pendiente: el resto del bloqueo en celular (TBT ~2,3 s) viene de Google Tag Manager (contenedor GTM-TPMR57QR, que además carga G-PGTRZE5XDF) y del píxel de Facebook. Revisar las etiquetas del contenedor con quien lo administra.
+
+Caché: Cloudflare (cuenta de Gmarketing) guarda `style.css`; al cambiarlo, subir el número de versión en el `<link>` del home (`style.css?v=...`), porque desde la API de Hostinger no se puede purgar Cloudflare.
