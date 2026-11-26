@@ -53,8 +53,9 @@ table{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:.95rem}
 th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
 th{background:#eef0fb;font-family:'monse',sans-serif}
 .tbl{overflow-x:auto}
-.pend{background:#fff7d1;border:1px dashed #c9a400;border-radius:8px;padding:12px 14px;margin:10px 0 14px;font-size:.92rem}
-.pend strong{font-family:'monse',sans-serif}
+.pend{background:#fff7d1;color:#3a2e00;border:1px dashed #c9a400;border-radius:8px;padding:12px 14px;margin:10px 0 14px;font-size:.92rem}
+.pend strong{font-family:'monse',sans-serif;color:#3a2e00}
+.pend li{color:#3a2e00}
 .ctabox{background:var(--grad);color:#fff;border-radius:12px;padding:26px 22px;margin-top:26px;text-align:center}
 .ctabox p{margin-bottom:16px}
 .btn{display:inline-block;background:var(--green);color:var(--bg);font-family:'monse',sans-serif;padding:13px 24px;border-radius:40px;text-decoration:none}
