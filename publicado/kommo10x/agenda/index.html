@@ -1,0 +1,850 @@
+<!doctype html>
+<html>
+
+<head>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-N93QDD83');</script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KOMMO10X CRM - 🥇 IMPLEMENTAR TU CRM PARA MEJORAR VENTAS ⭐⭐⭐⭐⭐ 🚀 </title>
+  <link rel="canonical" href="https://crmformeta.com/kommo10x/agenda/">
+  <meta name="keywords" content="kommo crm, incrementar ventas, mejora equipo comercial">
+  <meta name="description"
+    content=" 🥇Estas buscando incrementar las ventas de tu equipo comercial?. Gmarketing LLC es una de las agencias 
+        de marketing digital especializada en la mejora de los procesos comerciales de tu equipo de ventas con nuestra metodología de implementación de KommoCRM ">
+  <meta name="author" content="GMARKETING">
+  <meta name="google-site-verification" content="9osRvj2ptUreOnKbg46dXDibick563_jon4SMXDNcM0">
+
+  <link rel="apple-touch-icon" href="media/favicon.ico">
+  <link rel="icon" href="media/favicon.ico">
+
+  <link rel="stylesheet" href="intlTelInput.css">
+  <script src="intlTelInput.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="owl.carousel.min.css">
+  <script src="owl.carousel.js"></script>
+
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+
+  <style>
+    /* VARIABLES REPETIDAS DEL CSS PRINCIPAL PARA CONSISTENCIA */
+    :root {
+        --color-bg-dark: #0e0142;
+        --color-accent-green: #03FF90;
+        --color-accent-cyan: #0faab6;
+        --color-text-white: #ffffff;
+        --font-main: 'monse', sans-serif;
+        --font-bold: 'monse2', sans-serif;
+    }
+
+    /* === WHATSAPP CHAT WIDGET === */
+
+    .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2000;
+        background-color: transparent; /* Fondo transparente para que el widget parezca flotar */
+    }
+    .popup-overlay.show-popup {
+        display: block;
+    }
+
+    .popup-content {
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        width: 360px;
+        max-width: 90%;
+        background: #0e0142; /* Fondo oscuro */
+        border: 1px solid var(--color-accent-green); /* Borde neón verde */
+        border-radius: 16px;
+        box-shadow: 0 5px 30px rgba(0,0,0,0.4);
+        padding: 0;
+        text-align: center;
+        transform: translateY(20px) scale(0.95);
+        opacity: 0;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        overflow: visible; /* Importante para el selector de países */
+    }
+
+    .popup-overlay.show-popup .popup-content {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    /* Encabezado del widget con el emoji 👋 */
+    .popup-content h2 {
+        background: var(--color-accent-green); /* Fondo verde neón */
+        color: var(--color-bg-dark); /* Texto oscuro */
+        margin: 0;
+        padding: 15px 20px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        border-radius: 15px 15px 0 0;
+    }
+
+    .popup-content h2::before {
+        content: '👋';
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+
+    /* Botón de cierre × */
+    .close-btn {
+        position: absolute;
+        top: 13px;
+        right: 15px;
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--color-bg-dark); /* Color oscuro para contraste en el encabezado verde */
+        opacity: 0.7;
+        cursor: pointer;
+        line-height: 1;
+        z-index: 10;
+    }
+    .close-btn:hover {
+        opacity: 1;
+    }
+
+    /* Contenedores de vista (Formulario / Gracias) */
+    #form-view, #thank-you-view {
+        padding: 20px 25px;
+    }
+
+    #form-view {
+        display: block;
+        animation: fadeIn 0.5s;
+    }
+
+    #thank-you-view {
+        display: none; /* Oculto por defecto */
+        text-align: center;
+        animation: fadeIn 0.5s;
+    }
+
+    /* Texto de cabecera del widget */
+    .widget-header-text {
+        font-size: 0.95rem;
+        color: #ddd;
+        margin-bottom: 20px;
+        line-height: 1.4;
+        font-family: var(--font-main);
+    }
+
+    /* Estilo del Formulario */
+    #whatsappForm {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .popup-form-group {
+        margin: 0;
+    }
+
+    /* === ESTILO DE INPUTS (OSCURO) === */
+    .popup-form-group input, 
+    .popup-form-group select {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid rgba(255,255,255,0.2);
+        background-color: rgba(255,255,255,0.05); /* Fondo muy translúcido */
+        color: #fff;
+        font-family: inherit;
+        font-size: 0.95rem;
+        outline: none;
+    }
+
+    /* Placeholder claro */
+    .popup-form-group input::placeholder {
+        color: rgba(255,255,255,0.6);
+    }
+
+    /* Focus en inputs: borde verde neón */
+    .popup-form-group input:focus, 
+    .popup-form-group select:focus {
+        background-color: rgba(255,255,255,0.15);
+        border-color: var(--color-accent-green);
+    }
+
+    /* Estilo de la opción seleccionada en el select */
+    .popup-form-group select option {
+        background-color: #0e0142; /* Fondo oscuro para que coincida con el widget */
+        color: white;
+    }
+
+    /* === BOTÓN DE ENVÍO NEÓN === */
+    #submitBtn {
+        margin-top: 5px;
+        background: var(--color-accent-green); /* Fondo verde neón */
+        color: var(--color-bg-dark); /* Texto oscuro */
+        border: none;
+        padding: 12px;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.3s;
+        box-shadow: 0 4px 15px rgba(3, 255, 144, 0.3); /* Sombra de brillo verde */
+    }
+
+    #submitBtn:hover {
+        background: #fff;
+        transform: translateY(-2px);
+    }
+
+    /* === VISTA DE GRACIAS === */
+    #thank-you-view h2 {
+        background: none;
+        color: var(--color-accent-green);
+        text-align: center;
+        justify-content: center;
+        padding: 0 0 15px 0;
+        font-size: 1.5rem;
+    }
+
+    #thank-you-view h2::before {
+        display: none;
+    }
+
+    #thank-you-view p {
+        margin-bottom: 20px;
+        color: #ddd;
+        font-size: 0.95rem;
+    }
+
+    /* Botón de redirección a WhatsApp en la vista de Gracias */
+    #whatsapp-redirect-link.agenda {
+        background-color: #25d366; /* Color oficial de WhatsApp */
+        color: white;
+        text-decoration: none;
+        padding: 12px 20px;
+        border-radius: 50px;
+        font-weight: bold;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        transition: transform 0.2s;
+    }
+
+    #whatsapp-redirect-link.agenda:hover {
+        transform: scale(1.05);
+        background-color: #128c7e;
+    }
+
+    /* Texto legal en el pie del formulario */
+    .legal-text-form {
+        font-size: 0.75rem;
+        color: #aaa;
+        margin-top: 10px;
+        line-height: 1.3;
+    }
+
+    .legal-text-form a {
+        color: var(--color-accent-green);
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* === AJUSTES intl-tel-input (SELECTOR DE PAÍSES) === */
+    .iti {
+        width: 100%;
+    }
+
+    .iti__country-list {
+        background-color: #0e0142; /* Fondo oscuro */
+        color: #fff;
+        border: 1px solid var(--color-accent-green);
+        z-index: 10000; /* Asegurar que esté por encima de todo */
+        white-space: normal;
+    }
+
+    .iti__selected-flag {
+        background: transparent;
+    }
+  </style>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<script>
+    (function() {
+      'use strict';
+      
+      // Función para obtener parámetros de la URL
+      function getURLParameter(name) {
+        var url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+        var results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+      }
+      
+      // Funciones para manejar cookies y guardar UTMs
+      function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+          expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+      }
+      
+      function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+      }
+      
+      var utmParameters = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'];
+      
+      // Guardar parámetros al cargar
+      utmParameters.forEach(function(param) {
+        var value = getURLParameter(param);
+        if (value) { setCookie(param, value, 30); }
+      });
+      
+      // Función global para enviarlos en el AJAX
+      window.getAllUTMs = function() {
+        var utms = {};
+        utmParameters.forEach(function(param) {
+          var value = getCookie(param);
+          if (value) { utms[param] = value; }
+        });
+        return utms;
+      };
+    })();
+  </script>
+</head>
+
+<body>
+
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N93QDD83" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo-header-wrapper" style="padding: 20px 0;">
+                <img src="media/logo.png" alt="Gmarketing Logo" class="header-logo" style="margin-bottom: 0;">
+            </div>
+        </div>
+        <div class="animated-border-bottom"></div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-title-block" style="text-align: center;">
+                    <h1 class="main-title" style="text-transform: uppercase; color: var(--color-accent-green); text-shadow: 0 0 15px rgba(3, 255, 144, 0.4);">
+                        Estás a punto de cumplir tus objetivos
+                    </h1>
+                    <p class="hero-subtitle" style="font-size: 1.15rem; max-width: 900px; color: #fff; text-align: center; margin: 0 auto;">
+                        Agenda una reunión con nosotros para obtener un diagnóstico personalizado y descubrir cómo nuestra metodología puede impulsar tus resultados.
+                    </p>
+                </div>
+
+                <div class="video-container grow">
+                    <div class="video-wrapper">
+                        <iframe id="vimeo-player" 
+                                src="https://player.vimeo.com/video/867348802?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&controls=0&title=0&byline=0&portrait=0" 
+                                frameborder="0" 
+                                allow="autoplay; fullscreen; picture-in-picture" 
+                                title="Metodo Kommo10x">
+                        </iframe>
+                        
+                        <div class="custom-video-controls">
+                            <button id="btn-video-play" class="control-btn" aria-label="Pausar o Reproducir">
+                                <svg id="icon-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                                <svg id="icon-play" class="hidden-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </button>
+                            <button id="btn-video-mute" class="control-btn" aria-label="Activar o Desactivar Sonido">
+                                <svg id="icon-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                                <svg id="icon-sound" class="hidden-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-content">
+                    <div class="value-proposition" style="text-align: left; background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border: 1px solid var(--color-accent-green);">
+                        <p style="margin-bottom: 15px; font-weight: bold; color: var(--color-accent-green); text-align:center; font-size: 1.2rem;">
+                            ¡No esperes más, agenda ahora! 💼
+                        </p>
+                        <ul style="list-style: none; padding: 0; max-width: 600px; margin: 0 auto;">
+                            <li style="margin-bottom: 10px; color:#fff;">✅ Aumenta la productividad de los vendedores en un <span class="stat-highlight">34% ⬆️</span></li>
+                            <li style="margin-bottom: 10px; color:#fff;">✅ Disminuye los tiempos de respuesta a menos de <span class="stat-highlight">10 segundos ⏱️</span></li>
+                            <li style="margin-bottom: 10px; color:#fff;">✅ Mejora la retención y satisfacción de tus clientes 😊</li>
+                            <li style="margin-bottom: 10px; color:#fff;">✅ Garantiza un crecimiento de ventas conversacionales de mínimo un <span class="stat-highlight">10% 📈</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="qualification-section" style="padding: 0 0 60px; background-color: var(--color-bg-dark);">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
+                    <div style="background: rgba(3, 255, 144, 0.05); border: 1px solid var(--color-accent-green); padding: 40px 30px; border-radius: 20px; position: relative;">
+                        <div style="position: absolute; top: -15px; left: 30px; background: var(--color-accent-green); color: #0e0142; padding: 5px 15px; font-weight: bold; border-radius: 20px; font-size: 0.85rem; text-transform: uppercase;">Aplica si...</div>
+                        <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 15px; font-family: var(--font-bold);">✅ SOLAMENTE AGENDA SI:</h3>
+                        <p style="color: #ccc; line-height: 1.6; font-family: var(--font-regular);">Eres director o gerente comercial de una empresa que ofrezca soluciones a través de servicios o productos. Que tenga más de 3 vendedores y quieras mejorar sus resultados por internet notablemente.</p>
+                    </div>
+                    <div style="background: rgba(255, 0, 0, 0.05); border: 1px solid rgba(255, 77, 77, 0.5); padding: 40px 30px; border-radius: 20px; position: relative;">
+                        <div style="position: absolute; top: -15px; left: 30px; background: #ff4d4d; color: #fff; padding: 5px 15px; font-weight: bold; border-radius: 20px; font-size: 0.85rem; text-transform: uppercase;">No aplica si...</div>
+                        <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 15px; font-family: var(--font-bold);">❌ NO AYUDAMOS A:</h3>
+                        <p style="color: #ccc; line-height: 1.6; font-family: var(--font-regular);">Multiniveles, marketing de afiliados, e-commerce, comercio minorista, emprendimientos principiantes sin clientes y sin equipos comerciales, abogados, publicistas tradicionales o mercadólogos de compañías grandes, empresas que le vendan al gobierno o grandes multinacionales.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="calendly-section" style="padding: 0 0 60px; background-color: var(--color-bg-dark);">
+            <div class="container">
+                <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); max-width: 1000px; margin: 0 auto; overflow: hidden;">
+                    <div class="calendly-inline-widget custom-calendly" data-url="https://calendly.com/kommo10x/kommo10x"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                    </div>
+            </div>
+        </section>
+
+        <section class="guarantee-section" style="padding: 0 0 60px; background-color: var(--color-bg-dark);">
+            <div class="container" style="text-align: center;">
+                <div style="background: var(--color-accent-green); color: var(--color-bg-dark); padding: 30px; border-radius: 20px; max-width: 800px; margin: 0 auto; text-align: center; box-shadow: 0 10px 30px rgba(3, 255, 144, 0.2);">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px; font-family: var(--font-bold);">🛡️ ¿Y qué hay de nuestras garantías únicas?</h3>
+                    <p style="font-size: 1.05rem; line-height: 1.6; font-weight: 600; font-family: var(--font-regular);">Si por alguna razón no está satisfecho con el trabajo realizado después de completar el servicio de mejora con Kommo CRM, le ofrecemos una devolución completa de su dinero <span style="font-weight: normal; font-size: 0.9rem;">(no incluye el valor de los usuarios de Kommo)</span>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners-section">
+            <div class="container">
+                <h2 class="section-title">Nuestros Aliados Estratégicos</h2>
+                <div class="partners-grid">
+                    <div class="partner-card">
+                        <a href="https://www.facebook.com/business/partner-directory/search?solution_type=campaign_management&id=341949373714772&section=overview" target="_blank" aria-label="Facebook Partner">
+                            <img src="media/face.png" alt="Facebook Business Partner">
+                        </a>
+                    </div>
+                    <div class="partner-card">
+                        <a href="https://www.kommo.com/es/socios/encontrar-socio/gmarketing-sas/" target="_blank" aria-label="Kommo Partner">
+                            <img src="media/sel3.webp" alt="Kommo Partner">
+                        </a>
+                    </div>
+                    <div class="partner-card">
+                        <div class="logo-wrapper"><img src="media/9a.png" alt="Aliado Estratégico"></div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="logo-wrapper"><img src="media/400.png" alt="AuPair"></div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="logo-wrapper"><img src="media/icono3.webp" alt="GO Campus"></div>
+                    </div>
+                    <div class="partner-card">
+                        <a href="https://partnersdirectory.withgoogle.com/partners/7290279610" target="_blank" aria-label="Google Partner">
+                            <img src="media/icono4.webp" alt="Google Partner">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-header">
+                    <h2 class="contact-title" style="color: var(--color-accent-green); font-size: 2.5rem; text-transform: uppercase; margin-bottom: 10px; font-family: var(--font-bold);">NUESTRO CONTACTO</h2>
+                    <div class="contact-line" style="width: 100%; height: 2px; background-color: var(--color-accent-green); margin: 0 auto; box-shadow: 0 0 10px rgba(3, 255, 144, 0.5);"></div>
+                </div>
+                
+                <div class="contact-grid">
+                    <a class="contact-card" href="mailto:comercial@gmarketing.co">
+                        <div class="contact-icon-top"><img src="media/iconoemail.webp" alt="Email" style="width: 40px; filter: brightness(0) invert(1);"></div>
+                        <div class="contact-text-center"><p style="color: #fff; font-size: 1.1rem; font-weight: 700; font-family: var(--font-regular);">comercial@gmarketing.co</p></div>
+                    </a>
+
+                    <div class="contact-card location-card">
+                        <div class="contact-icon-top"><img src="media/iconoplace.webp" alt="Ubicación" style="width: 40px; filter: brightness(0) invert(1);"></div>
+                        <div class="contact-text-center">
+                            <div class="loc-item" style="color: #fff; font-size: 1rem; margin-bottom: 10px; font-family: var(--font-regular);">
+                                <img src="media/us.png" class="flag" alt="USA" style="width: 20px; vertical-align: middle; margin-right: 5px;"> 
+                                <strong>Gmarketing USA LLC</strong><br>
+                                <span class="small-address" style="font-size: 0.85rem; color: #ccc;">Apto 3310, 31 SE 5th St, Miami, FL 33131 🇺🇸</span>
+                            </div>
+                            <div class="loc-separator" style="height: 1px; width: 60%; background: rgba(255,255,255,0.2); margin: 15px auto;"></div>
+                            <div class="loc-item" style="color: #fff; font-size: 1rem; margin-bottom: 10px; font-family: var(--font-regular);">
+                                <img src="media/co.png" class="flag" alt="Colombia" style="width: 20px; vertical-align: middle; margin-right: 5px;"> 
+                                <strong>Gmarketing SAS</strong><br>
+                                <span class="small-address" style="font-size: 0.85rem; color: #ccc;">Calle 26N # 5AN -50, Cali-Colombia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="contact-card clickllamar" href="tel:+573216319137">
+                        <div class="contact-icon-top"><img src="media/iconotel.webp" alt="Teléfono" style="width: 40px; filter: brightness(0) invert(1);"></div>
+                        <div class="contact-text-center"><p style="color: #fff; font-size: 1.1rem; font-weight: 700; font-family: var(--font-regular);">+57 321 6319137</p></div>
+                    </a>
+                </div>
+
+                <div class="social-connect">
+                    <h3 class="social-title" style="font-family: var(--font-bold);">Síguenos en nuestras redes</h3>
+                    <div class="social-icons-wrapper">
+                        <a href="https://www.instagram.com/gmarketing.co/" target="_blank" class="social-btn instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058 1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        <a href="https://www.facebook.com/gmarketing.co/" target="_blank" class="social-btn facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg></a>
+                        <a href="https://www.linkedin.com/company/gmarketing-s-a-s/" target="_blank" class="social-btn linkedin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: #04001c; padding: 50px 0; border-top: 1px solid #1f1f1f; text-align: center;">
+        <div class="container">
+            <div class="logo-footer">
+                <img src="media/logo.png" alt="Gmarketing Logo" style="width: 250px; margin-bottom: 20px;">
+            </div>
+            <div class="copyright" style="color: #888; margin-bottom: 30px; font-size: 0.9rem; font-family: var(--font-regular);">
+                © Copyright <span id="year"></span> | Una estrategia de Gmarketing S.A.S 
+                <a href="https://gmarketing.co/" target="_blank" style="color: var(--color-accent-green);">www.gmarketing.co</a>
+                <div style="margin-top: 10px; font-size: 0.85rem;">
+                    <a href="#" onclick="popupprivacy(); return false;" style="color: #aaa; margin-right: 15px;">Política de Privacidad</a>
+                    <a href="#" onclick="popupwarranty(); return false;" style="color: #aaa;">Política de Garantía</a>
+                </div>
+            </div>
+            <div class="footer-links-grid">
+                <div class="footer-column">
+                    <a href="https://crmformeta.com/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0;">www.crmformeta.com</a>
+                    <a href="https://crmformeta.com/kommo10x/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0;">/kommo10x</a>
+                    <a href="https://crmformeta.com/kommo10x/agenda/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0;">/agenda</a>
+                    <a href="https://crmformeta.com/documentacion/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0;">/documentacion</a>
+                    <a href="https://crmformeta.com/brief/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0;">/brief</a>
+                    <a href="https://crmformeta.com/#casos" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0;">/casos</a>
+                </div>
+                <div class="footer-column">
+                    <a href="https://www.gmarketing.co/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0;">www.gmarketing.co</a>
+                    <a href="http://amocrm.com.co/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0;">www.amocrm.com.co</a>
+                    <a href="https://www.gmarketing.co/dircomercial/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0;">/dircomercial</a>
+                    <a href="https://www.gmarketing.co/dircomercial/agenda/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0;">/agenda</a>
+                    <a href="https://gmarketing.co/brief/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0;">/brief</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="butchatwhatsapp2" id="openPopupBtn" style="cursor: pointer;">
+        <img src="media/wpp.png" alt="Abrir chat de WhatsApp">
+    </div>
+
+    <div class="popup-overlay" id="whatsappPopup">
+        <div class="popup-content chat-widget-style">
+            <span class="close-btn">×</span>
+            
+            <div id="form-view">
+                <h2>Háblanos por WhatsApp</h2>
+                <p class="widget-header-text">En 20–30 minutos revisamos tu volumen de leads y si Kommo10X tiene sentido para tu empresa.</p>
+                <form id="whatsappForm" novalidate>
+                    <div class="popup-form-group">
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="popup-form-group">
+                        <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="popup-form-group phone-wrapper">
+                        <input type="tel" id="telefono-popup-kommo10x-agenda" name="telefono" placeholder="Número de teléfono" required> 
+                    </div>
+                    <div class="popup-form-group">
+                        <select id="asesores" name="asesores" required>
+                            <option value="" disabled selected>Número de asesores comerciales</option>
+                            <option value="de 2 a 5 asesores">de 2 a 5 asesores</option>
+                            <option value="de 5 a 10 asesores">de 5 a 10 asesores</option>
+                            <option value="más de 10 asesores">más de 10 asesores</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="submitBtn">ENVIAR Y CHATEAR EN WHATSAPP</button>
+                    
+                    <p class="legal-text-form">Al hacer clic, aceptas nuestra <a href="#" onclick="popupprivacy(); return false;">Política de Privacidad</a></p>
+                </form>
+            </div>
+
+            <div id="thank-you-view">
+                <h2>¡Gracias!</h2>
+                <p>Hemos recibido tus datos. Haz clic abajo para iniciar el chat en WhatsApp.</p>
+                <a href="#" id="whatsapp-redirect-link" class="agenda" target="_blank">
+                    <img src="media/wpp_white.png" alt="WhatsApp Icon" style="width: 20px;">
+                    Ir a WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="popupprivacy" class="policy-overlay" onclick="popupprivacy()">
+        <div class="policy-content" onclick="event.stopPropagation()">
+            <span class="policy-close" onclick="popupprivacy()">×</span>
+            <h2>Política de Privacidad</h2>
+            <p>Tenemos un especial cuidado en el tratamiento de los datos. Todo el personal con acceso a datos de carácter personal ha recibido la formación necesaria para mantener la total confidencialidad e integridad de los datos de acuerdo a la ley de protección de datos.</p>
+        </div>
+    </div>
+
+    <div id="popupwarranty" class="policy-overlay" onclick="popupwarranty()">
+        <div class="policy-content" onclick="event.stopPropagation()">
+            <span class="policy-close" onclick="popupwarranty()">×</span>
+            <h2>Políticas de Garantía y Aclaraciones</h2>
+            <div class="popup-scroll-content">
+                <h3>GARANTÍA:</h3>
+                <p>Si después de 35 días, y cumpliendo el CLIENTE con todas sus obligaciones, no se alcanzan las métricas definidas:</p>
+                <ul>
+                    <li>Mejora de la productividad en un 34%.</li>
+                    <li>Reducción de los tiempos de respuesta a 10 seg a los prospectos.</li>
+                    <li>Incremento en las ventas conversacionales en un 10%.</li>
+                </ul>
+                <p>GMARKETING reembolsará el valor del servicio de implementación Kommo10X. Esta garantía no aplica a licencias de usuarios KOMMO ni a causas atribuibles al cliente.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // LÓGICA DEL VIDEO HERO PRINCIPAL (VIMEO) - Mantener tu código existente
+            var iframeHero = document.querySelector('#vimeo-player');
+            if (iframeHero && typeof Vimeo !== 'undefined') {
+                var playerHero = new Vimeo.Player(iframeHero);
+                var btnPlayHero = document.getElementById('btn-video-play');
+                var btnMuteHero = document.getElementById('btn-video-mute');
+                var iconPauseHero = document.getElementById('icon-pause');
+                var iconPlayHero = document.getElementById('icon-play');
+                var iconMutedHero = document.getElementById('icon-muted');
+                var iconSoundHero = document.getElementById('icon-sound');
+
+                var isPlayingHero = true; 
+                var isMutedHero = true;
+
+                function updateHeroPlayIcon(playing) {
+                    if (playing) {
+                        iconPlayHero.classList.add('hidden-icon'); 
+                        iconPauseHero.classList.remove('hidden-icon');
+                    } else {
+                        iconPlayHero.classList.remove('hidden-icon'); 
+                        iconPauseHero.classList.add('hidden-icon');
+                    }
+                }
+
+                function updateHeroMuteIcon(muted) {
+                    if (muted) {
+                        iconSoundHero.classList.add('hidden-icon'); 
+                        iconMutedHero.classList.remove('hidden-icon');
+                    } else {
+                        iconSoundHero.classList.remove('hidden-icon'); 
+                        iconMutedHero.classList.add('hidden-icon');
+                    }
+                }
+
+                btnPlayHero.addEventListener('click', function() {
+                    if (isPlayingHero) { playerHero.pause(); isPlayingHero = false; } 
+                    else { playerHero.play(); isPlayingHero = true; }
+                    updateHeroPlayIcon(isPlayingHero);
+                });
+
+                btnMuteHero.addEventListener('click', function() {
+                    if (isMutedHero) { playerHero.setVolume(1); playerHero.setMuted(false); isMutedHero = false; } 
+                    else { playerHero.setVolume(0); playerHero.setMuted(true); isMutedHero = true; }
+                    updateHeroMuteIcon(isMutedHero);
+                });
+
+                playerHero.on('play', function() { isPlayingHero = true; updateHeroPlayIcon(true); });
+                playerHero.on('pause', function() { isPlayingHero = false; updateHeroPlayIcon(false); });
+            }
+
+            // === LÓGICA DEL WIDGET DE CHAT DE WHATSAPP ===
+            
+            var $openPopupBtn = $('#openPopupBtn');
+            var $whatsappPopup = $('#whatsappPopup');
+            var $closeBtn = $whatsappPopup.find('.close-btn');
+            var $whatsappForm = $('#whatsappForm');
+            var $formView = $('#form-view');
+            var $thankYouView = $('#thank-you-view');
+            var $redirectLink = $('#whatsapp-redirect-link');
+            
+            // Inicializar el selector de países para el campo de teléfono
+            var phoneInput = document.querySelector("#telefono-popup-kommo10x-agenda");
+            var iti = window.intlTelInput(phoneInput, {
+                initialCountry: "co", // Predeterminar Colombia
+                separateDialCode: true,
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" // Para validación y formateo
+            });
+
+            // Abrir la ventana emergente al hacer clic en el botón flotante
+            $openPopupBtn.on('click', function() {
+                $whatsappPopup.addClass('show-popup');
+            });
+
+            // Cerrar la ventana emergente
+            function closeWidget() {
+                $whatsappPopup.removeClass('show-popup');
+                
+                // Resetear vistas después de cerrar para la próxima vez
+                setTimeout(function() {
+                    $thankYouView.hide();
+                    $formView.show();
+                    $whatsappForm[0].reset();
+                }, 400); 
+            }
+
+            $closeBtn.on('click', closeWidget);
+
+            // Cerrar al hacer clic fuera del widget (en el overlay transparente)
+            $whatsappPopup.on('click', function(e) {
+                if ($(e.target).is($whatsappPopup)) {
+                    closeWidget();
+                }
+            });
+
+            // Manejar el envío del formulario
+            // Manejar el envío del formulario
+            $whatsappForm.on('submit', function(e) {
+                e.preventDefault();
+                
+                // Resetear estilos de error
+                $(this).find('input, select').css('border-color', '');
+
+                // Obtener datos del formulario
+                var nombre = $('#nombre').val().trim();
+                var correo = $('#correo').val().trim();
+                var asesores = $('#asesores').val();
+                var telefonoIsValid = iti.isValidNumber(); // Validar teléfono
+                var telefonoFull = iti.getNumber(); // Obtener número completo con código de país
+
+                var formIsValid = true;
+
+                // Validación simple de campos obligatorios
+                if (!nombre) { $('#nombre').css('border-color', 'red'); formIsValid = false; }
+                if (!correo || !correo.includes('@')) { $('#correo').css('border-color', 'red'); formIsValid = false; }
+                if (!asesores) { $('#asesores').css('border-color', 'red'); formIsValid = false; }
+                if (!telefonoIsValid) { $('#telefono-popup-kommo10x-agenda').css('border-color', 'red'); formIsValid = false; }
+
+                if (formIsValid) {
+                    var submitButton = $('#submitBtn');
+                    var originalButtonText = submitButton.text();
+                    submitButton.prop('disabled', true).text('Enviando...');
+                    
+                    // 1. Obtener todos los UTMs almacenados por el script del <head>
+                    var allUTMs = window.getAllUTMs();
+
+                    // 2. Obtener datos básicos del formulario
+                    var formData = { 
+                      nombre: nombre, 
+                      correo: correo, 
+                      telefono: telefonoFull, 
+                      asesores: asesores 
+                    };
+
+                    // 3. Fusionar los UTMs con los datos del formulario
+                    $.extend(formData, allUTMs);
+
+                    // Generar el mensaje de WhatsApp
+                    var message = "Hola, me interesa Kommo10X.%0A%0A" +
+                                  "*Datos del formulario:*%0A" +
+                                  "- *Nombre:* " + nombre + "%0A" +
+                                  "- *Correo:* " + correo + "%0A" +
+                                  "- *Teléfono:* " + telefonoFull + "%0A" +
+                                  "- *Asesores:* " + asesores;
+                    
+                    var whatsappNumber = "573169062242";
+                    var whatsappUrl = "https://wa.me/" + whatsappNumber + "?text=" + message;
+                    
+                    $redirectLink.attr('href', whatsappUrl);
+                    
+                    // 4. Petición AJAX al PHP (Esto faltaba en tu código original)
+                    $.ajax({
+                      type: 'POST',
+                      url: 'enviarwspp.php', 
+                      data: formData,
+                      dataType: 'json',
+                      success: function(response) {
+                        if (response && response.status === 'success') {
+                          
+                          // === EVENTO PARA GOOGLE TAG MANAGER ===
+                          window.dataLayer = window.dataLayer || [];
+                          window.dataLayer.push({
+                           'event': 'FormWhatsapp'
+                          });
+                          // ======================================
+                          
+                          $formView.hide();
+                          $thankYouView.show();
+                        } else {
+                          alert('Hubo un error al enviar tu mensaje. Por favor, intenta de nuevo.');
+                          submitButton.prop('disabled', false).text(originalButtonText);
+                        }
+                      },
+                      error: function() {
+                        alert('Hubo un problema de conexión. Por favor, revisa tu internet y vuelve a intentarlo.');
+                        submitButton.prop('disabled', false).text(originalButtonText);
+                      }
+                    });
+                }
+            });
+            
+            // Función para actualizar el año en el footer automáticamente
+            document.getElementById('year').textContent = new Date().getFullYear();
+        });
+
+        // Funciones para abrir/cerrar popups de políticas
+        function popupprivacy() {
+            var $popupprivacy = $('#popupprivacy');
+            if ($popupprivacy.hasClass('showpopuppolicies')) {
+                $popupprivacy.removeClass('showpopuppolicies').addClass('hidepopuppolicies');
+            } else {
+                // Cerrar otros popups abiertos si los hubiera
+                $('.policy-overlay').removeClass('showpopuppolicies').addClass('hidepopuppolicies');
+                $popupprivacy.removeClass('hidepopuppolicies').addClass('showpopuppolicies');
+            }
+        }
+
+        function popupwarranty() {
+            var $popupwarranty = $('#popupwarranty');
+            if ($popupwarranty.hasClass('showpopuppolicies')) {
+                $popupwarranty.removeClass('showpopuppolicies').addClass('hidepopuppolicies');
+            } else {
+                // Cerrar otros popups abiertos si los hubiera
+                $('.policy-overlay').removeClass('showpopuppolicies').addClass('hidepopuppolicies');
+                $popupwarranty.removeClass('hidepopuppolicies').addClass('showpopuppolicies');
+            }
+        }
+    </script>
+</body>
+
+</html>

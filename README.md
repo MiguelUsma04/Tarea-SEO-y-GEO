@@ -13,6 +13,7 @@ Repo de trabajo del plan. Rutas de los comandos relativas a la raíz del repo.
 | `publicado/` | Archivos tal como están hoy en el servidor: home, robots.txt, sitemap.xml, llms.txt, .htaccess, páginas legales y borradores |
 | `respaldo-2026-11-25/` | Copia del sitio antes de los cambios del 25-nov-2026, sin `*.php` (tienen contraseñas SMTP) ni `/entregables/` (tienen tokens de clientes) |
 | `subir.sh` | Sube un archivo al hosting por la API de Hostinger |
+| `herramientas/rastreo.py` | Rastreo SEO del sitio (códigos HTTP, title, descripción, canonical, H1, enlaces rotos, cifras). Resultado en `reportes/` |
 
 ## Dónde vive el sitio
 
@@ -62,3 +63,27 @@ Pendientes de Carlos:
 Pendientes técnicos:
 - Search Console, Bing Webmaster y canal "IA" en GA4 (`G-R05L91RDJD`).
 - `/costos_api/` tiene el canonical apuntando a calculadora.dotsflow.ai y la marca "DotsCom Group".
+
+## Avance 26-nov-2026 (Juan Pablo, parte técnica)
+
+- Schema validado en validator.schema.org: home, /privacidad/, /garantia/ y borradores sin errores ni avisos.
+- IndexNow activo: clave en `publicado/ccc854a102d5781b78e5ad4a162a96b0.txt`. Las 12 URLs del sitemap se enviaron a api.indexnow.org (respuesta 202). Al publicar una URL nueva, volver a enviarla.
+- `.htaccess`: la 301 de `index.html` ahora aplica en todas las carpetas.
+- Canonical agregado en /kommo10x/, /kommo10x/agenda/, /soluciones_agenticas/, /crm_para_whatsapp/, /documentacion/, /gestion_de_respuestas_de_prospectos/, /como_convertir_el_no_en_si/ y /5_razones_cliente_no_compra/.
+- /kommo10x/: 4 enlaces vacíos a Calendly; quitado el botón de Google Business que apuntaba a `TU_LINK_GMB`. Ponerlo de nuevo cuando Carlos pase el enlace del perfil.
+- Enlaces a /exito/ (404) cambiados a /#casos en /kommo10x/, /kommo10x/agenda/, /calculadora/ y /documentacion/.
+- /calculadora/: title, descripción y canonical nuevos. Calcula el costo de no tener CRM, no licencias.
+- Borrador /whatsapp-multiagente/: calculadora propia de asesores × plan × meses.
+- Rastreo: `reportes/rastreo-2026-11-26.md`. Cero enlaces internos rotos.
+
+Pendiente de Juan Pablo que requiere entrar a cuentas:
+- Search Console: verificar propiedad de dominio o prefijo `https://crmformeta.com/` y enviar `sitemap.xml`.
+- Bing Webmaster: importar desde Search Console o verificar, y enviar `sitemap.xml`.
+- GA4: grupo de canales personalizado con el canal "IA".
+- Prueba de resultados enriquecidos de Google (search.google.com/test/rich-results) para home, /kommo-crm/ y /agente-ia-whatsapp/.
+
+Hallazgos del rastreo para María Camila (texto):
+- Descripciones de más de 160 caracteres: /kommo10x/ (254), /crm_para_whatsapp/ (310), /documentacion/ (166), /gestion_de_respuestas_de_prospectos/ (290), /como_convertir_el_no_en_si/ (301), /5_razones_cliente_no_compra/ (296).
+- /kommo10x/agenda/ no tiene descripción.
+- Varios H1 en una misma página: /documentacion/ (13), /kommo10x/, /calculadora/ y las 4 guías antiguas (2).
+- /crm_para_whatsapp/ se desborda en celular (390 px de pantalla, 420 px de contenido).

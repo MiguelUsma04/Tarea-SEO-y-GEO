@@ -7,9 +7,9 @@ RewriteEngine On
 # www -> sin www
 RewriteCond %{HTTP_HOST} ^www\.crmformeta\.com$ [NC]
 RewriteRule ^(.*)$ https://crmformeta.com/$1 [R=301,L]
-# /index.html -> /
-RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
-RewriteRule ^index\.html$ / [R=301,L]
+# /index.html y /carpeta/index.html -> / y /carpeta/
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
+RewriteRule ^(.*/)?index\.html$ /$1 [R=301,L]
 </IfModule>
 
 # No indexar páginas de entregables de clientes

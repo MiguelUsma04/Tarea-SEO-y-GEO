@@ -14,6 +14,22 @@ LICENCIAS_TABLA = """<div class="tbl"><table>
 <tr><td>Empresarial</td><td>Cotización</td><td>Operaciones de alto volumen con necesidades a la medida</td><td>Límites ampliados, más almacenamiento, soporte dedicado y SLA</td></tr>
 </table></div><p>Compra mínima de 6 meses en todos los planes.</p>"""
 
+# Calculadora de licencias: asesores × plan × meses. Precios = tabla LICENCIAS_TABLA.
+CALC_ASESORES = """<div id="calc-asesores" style="background:#eef0fb;border-radius:10px;padding:16px;margin:12px 0">
+<h3 style="margin-top:0">Calcula las licencias de tu equipo</h3>
+<p style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:8px">
+<label>Asesores <input id="ca-n" type="number" min="1" max="200" value="5" style="width:80px;padding:6px"></label>
+<label>Plan <select id="ca-p" style="padding:6px"><option value="20">Básico (USD 20)</option><option value="30" selected>Avanzado (USD 30)</option><option value="45">Pro (USD 45)</option></select></label>
+<label>Meses <select id="ca-m" style="padding:6px"><option value="6">6</option><option value="8">8</option><option value="10">10</option><option value="12" selected>12</option><option value="18">18</option></select></label>
+</p>
+<p id="ca-out" style="font-family:monse,sans-serif;margin-bottom:4px"></p>
+<p style="font-size:.85rem;color:#4b4b6b;margin:0">Precio de lista de Kommo por usuario al mes, compra mínima de 6 meses. No incluye mensajes de WhatsApp API ni implementación.</p>
+<script>(function(){var n=document.getElementById('ca-n'),p=document.getElementById('ca-p'),m=document.getElementById('ca-m'),o=document.getElementById('ca-out');
+function f(x){return 'USD '+x.toLocaleString('es-CO')}
+function c(){var a=Math.max(1,parseInt(n.value||1,10)),pr=+p.value,me=+m.value,mes=a*pr;o.textContent=a+' asesores en '+p.options[p.selectedIndex].text.split(' (')[0]+': '+f(mes)+' al mes · '+f(mes*me)+' por '+me+' meses.'}
+[n,p,m].forEach(function(e){e.addEventListener('input',c)});c();})();</script>
+</div>"""
+
 PAGINAS = [
 # ------------------------------------------------------------------ 1
 {
@@ -152,8 +168,7 @@ PAGINAS = [
    "more": "<ul><li>Asignación automática de chats al asesor adecuado.</li><li>Notas internas y chats entre el equipo dentro de cada conversación.</li><li>Monitoreo del equipo en tiempo real.</li><li>Aplicación móvil con notificaciones.</li></ul>"},
   {"q": "¿Cuánto cuesta WhatsApp multiagente?",
    "a": "WhatsApp multiagente con Kommo cuesta desde USD 20 por usuario al mes en el plan Básico. Un equipo de 5 asesores paga desde USD 100 al mes; con salesbots en el plan Avanzado, desde USD 150 al mes. A eso se suman los mensajes de WhatsApp Business API que cobra Meta.",
-   "more": '<p>Calcula el costo de tu equipo en la <a href="/calculadora/">calculadora</a>.</p>',
-   "pend": ["Juan Pablo: revisar que /calculadora/ calcule asesores × plan; si no, ajustarla o quitar el enlace."]},
+   "more": CALC_ASESORES + '<p>¿Quieres saber cuánto pierdes hoy sin CRM? Usa la <a href="/calculadora/">calculadora de costo de oportunidad</a>.</p>'},
   {"q": "¿Se puede usar WhatsApp Business app con varios asesores?",
    "a": "La app de WhatsApp Business admite pocos dispositivos vinculados y no reparte chats ni mide a cada asesor. Para un equipo de 3 o más vendedores, la API oficial conectada a un CRM es la opción estable: permite varios usuarios, automatizaciones y reportes, y sigue las políticas de Meta.",
    "pend": ["María Camila: confirmar con fuente oficial de Meta cuántos dispositivos admite hoy WhatsApp Business app."]},
