@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Calculadora de Costos | Gmarketing</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="apple-touch-icon" href="media/favicon.ico">
+  <link rel="icon" href="media/favicon.ico">
+
+<style>
+  /* --- FORZAR FUENTE OFICIAL --- */
+  :root {
+      --font-main: 'Montserrat', sans-serif !important;
+      --font-bold: 'Montserrat', sans-serif !important;
+      --font-regular: 'Montserrat', sans-serif !important;
+  }
+  
+  .main-title {
+      font-weight: 800 !important; /* Fuerza el grosor ExtraBold */
+  }
+
+  /* --- AJUSTES RÁPIDOS PARA COMPATIBILIDAD CON CSS GLOBAL --- */
+  .calculadora-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding-top: 40px;
+      padding-bottom: 80px;
+  }
+  
+  /* Sobrescribimos el fondo del body de la calculadora porque tu CSS global ya lo maneja */
+  body { min-height: 100vh; }
+
+  
+</style>
+
+</head>
+<body>
+
+  <!-- HEADER OFICIAL (SOLO LOGO) -->
+  <header class="main-header" style="padding: 10px 0 0 0;">
+      <div class="container">
+          <div class="alert-box" style="padding: 10px 10px 15px 10px;">
+              <div class="logo-header-wrapper" style="margin-bottom: 10px;">
+                  <img src="media/logo.png" alt="Gmarketing Logo" class="header-logo" style="max-height: 35px; width: auto; margin-bottom: 0;">
+              </div>
+              <h1 class="main-title" style="margin-bottom: 0; text-align: center; width: 100%; font-size: 1.5rem; line-height: 1.2;">
+                  <span class="highlight-text">¡DESCUBRE EL VERDADERO COSTO</span> DE OPERAR SIN SISTEMA! 📊
+              </h1>
+          </div>
+      </div>
+      <div class="animated-border-bottom" style="margin-top: 0;"></div>
+  </header>
+
+  <main class="calculadora-wrapper">
+      
+      <div class="hero-title-block" style="text-align: center; margin-top: 20px;">
+        <h1 class="main-title" style="margin-bottom: 20px; text-align: center; width: 100%;">
+            ¿Cuánto te cuesta <span class="highlight-text">no tener CRM</span>?
+        </h1>
+        <p class="hero-subtitle" style="text-align: center; margin: 0 auto;">
+            Diagnóstico de dolor real + costo de oportunidad + comparativa de inversión.<br>Completa cada sección y descubre tu número.
+        </p>
+      </div>
+
+<div class="progress-wrap">
+  <div class="steps-row">
+    <div class="step-dot" onclick="openSection(0)">
+      <div class="dot-circle active" id="dot0">1</div>
+      <div class="dot-label active" id="dlbl0">Operación</div>
+    </div>
+    <div class="step-line" id="line0"></div>
+    <div class="step-dot" onclick="openSection(1)">
+      <div class="dot-circle" id="dot1">2</div>
+      <div class="dot-label" id="dlbl1">Leads</div>
+    </div>
+    <div class="step-line" id="line1"></div>
+    <div class="step-dot" onclick="openSection(2)">
+      <div class="dot-circle" id="dot2">3</div>
+      <div class="dot-label" id="dlbl2">Equipo</div>
+    </div>
+    <div class="step-line" id="line2"></div>
+    <div class="step-dot" onclick="openSection(3)">
+      <div class="dot-circle" id="dot3">4</div>
+      <div class="dot-label" id="dlbl3">Proceso</div>
+    </div>
+    <div class="step-line" id="line3"></div>
+    <div class="step-dot" onclick="openSection(4)">
+      <div class="dot-circle" id="dot4">5</div>
+      <div class="dot-label" id="dlbl4">Resultado</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- SECTION 1 -->
+<div class="section" id="sec0">
+  <div class="sec-header" onclick="toggleSection(0)">
+    <div class="sec-left">
+      <div class="sec-icon">💰</div>
+      <div class="sec-info">
+        <h3>Tu operación comercial</h3>
+        <p>Volumen, ticket y conversión actual</p>
+      </div>
+    </div>
+    <div class="sec-status">
+      <span class="badge-pending" id="badge0">Pendiente</span>
+      <span class="chevron open" id="chev0">▾</span>
+    </div>
+  </div>
+  <div class="sec-body open" id="body0">
+    <div class="pain-label">💡 <strong>¿Por qué esto importa?</strong> Con tu ticket y tasa de cierre calculamos exactamente cuánto vale cada lead que se pierde. Un lead no es un contacto — es dinero con nombre y apellido.</div>
+    <div class="grid2">
+      <div class="field">
+        <label>Leads mensuales recibidos</label>
+        <input type="number" id="leads" placeholder="Ej: 300" min="0">
+        <div class="field-hint">Incluye WhatsApp, redes, web, referidos</div>
+      </div>
+      <div class="field">
+        <label>Ticket promedio por venta (USD)</label>
+        <input type="number" id="ticket" placeholder="Ej: 500" min="0">
+        <div class="field-hint">Valor de una venta típica cerrada</div>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="field">
+        <label>Tasa de cierre actual (%)</label>
+        <input type="number" id="close_rate" placeholder="Ej: 20" min="0" max="100">
+        <div class="field-hint">De 100 leads, ¿cuántos se convierten?</div>
+      </div>
+      <div class="field">
+        <label>Margen de utilidad estimado (%)</label>
+        <input type="number" id="margin" placeholder="Ej: 35" min="0" max="100">
+        <div class="field-hint">Para calcular ganancia real vs ingreso bruto</div>
+      </div>
+    </div>
+    <button class="next-btn" onclick="nextSection(0)">Continuar → Pérdida por leads ▾</button>
+  </div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section" id="sec1">
+  <div class="sec-header" onclick="toggleSection(1)">
+    <div class="sec-left">
+      <div class="sec-icon">🔥</div>
+      <div class="sec-info">
+        <h3>Leads quemados sin sistema</h3>
+        <p>Dónde se escapa el dinero hoy</p>
+      </div>
+    </div>
+    <div class="sec-status">
+      <span class="badge-pending" id="badge1">Pendiente</span>
+      <span class="chevron" id="chev1">▾</span>
+    </div>
+  </div>
+  <div class="sec-body" id="body1">
+    <div class="pain-label">⚠️ <strong>Dato crítico:</strong> Según Harvard Business Review, responder un lead después de 5 minutos reduce la probabilidad de contacto en <strong>10x</strong>. Cada campo que completes aquí se convierte en un número de pérdida real.</div>
+    <div class="field">
+      <label>% de leads que NO reciben respuesta en los primeros 5 minutos</label>
+      <input type="number" id="no_response" placeholder="Ej: 60" min="0" max="100">
+      <div class="field-hint">Sé honesto. Sin CRM, la mayoría supera el 50%.</div>
+    </div>
+    <div class="field">
+      <label>% de leads que se pierden por falta de seguimiento posterior</label>
+      <input type="number" id="lost_followup" placeholder="Ej: 45" min="0" max="100">
+      <div class="field-hint">HubSpot: el 80% de ventas requiere 5+ seguimientos. ¿Cuántos leads nunca los reciben?</div>
+    </div>
+    <div class="field">
+      <label>% de leads que nunca entran a un pipeline ni se califican</label>
+      <input type="number" id="unqualified" placeholder="Ej: 35" min="0" max="100">
+      <div class="field-hint">Leads que llegaron, se respondió algo y quedaron en el limbo</div>
+    </div>
+    <div class="field">
+      <label>% de leads que se duplican o caen entre dos vendedores (nadie los atiende)</label>
+      <input type="number" id="duplicated" placeholder="Ej: 15" min="0" max="100">
+      <div class="field-hint">Común sin CRM: "yo creí que tú lo ibas a llamar"</div>
+    </div>
+    <button class="next-btn" onclick="nextSection(1)">Continuar → Tu equipo comercial ▾</button>
+  </div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section" id="sec2">
+  <div class="sec-header" onclick="toggleSection(2)">
+    <div class="sec-left">
+      <div class="sec-icon">👥</div>
+      <div class="sec-info">
+        <h3>Tu equipo comercial</h3>
+        <p>Tiempo y costo del capital humano</p>
+      </div>
+    </div>
+    <div class="sec-status">
+      <span class="badge-pending" id="badge2">Pendiente</span>
+      <span class="chevron" id="chev2">▾</span>
+    </div>
+  </div>
+  <div class="sec-body" id="body2">
+    <div class="pain-label">🕐 <strong>El costo invisible:</strong> Sin CRM, tu equipo gasta horas buscando conversaciones, copiando datos, recordando a quién llamar. Ese tiempo tiene costo y cero retorno.</div>
+    <div class="grid2">
+      <div class="field">
+        <label>Número de vendedores</label>
+        <input type="number" id="sellers" placeholder="Ej: 4" min="1">
+      </div>
+      <div class="field">
+        <label>Salario mensual promedio por vendedor (USD)</label>
+        <input type="number" id="salary" placeholder="Ej: 800" min="0">
+        <div class="field-hint">Costo real para la empresa (incluye prestaciones si aplica)</div>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="field">
+        <label>Horas/semana que cada vendedor pierde en tareas manuales</label>
+        <input type="number" id="wasted_hours" placeholder="Ej: 8" min="0" max="60">
+        <div class="field-hint">Buscar chats, copiar info, actualizar hojas de cálculo, recordar seguimientos</div>
+      </div>
+      <div class="field">
+        <label>Horas laborales por semana del vendedor</label>
+        <input type="number" id="work_hours" placeholder="Ej: 44" min="1" max="80">
+      </div>
+    </div>
+    <button class="next-btn" onclick="nextSection(2)">Continuar → Proceso y gestión ▾</button>
+  </div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section" id="sec3">
+  <div class="sec-header" onclick="toggleSection(3)">
+    <div class="sec-left">
+      <div class="sec-icon">📉</div>
+      <div class="sec-info">
+        <h3>Proceso y gestión actual</h3>
+        <p>Visibilidad, control y errores del sistema</p>
+      </div>
+    </div>
+    <div class="sec-status">
+      <span class="badge-pending" id="badge3">Pendiente</span>
+      <span class="chevron" id="chev3">▾</span>
+    </div>
+  </div>
+  <div class="sec-body" id="body3">
+    <div class="pain-label">📊 <strong>Sin datos no hay decisiones:</strong> Si no sabes qué etapa falla, no puedes mejorar. Esta sección mide el costo de operar a ciegas.</div>
+    <div class="field">
+      <label>¿Cuántas veces al mes pierdes una venta por no tener historial del cliente?</label>
+      <input type="number" id="lost_history" placeholder="Ej: 5" min="0">
+      <div class="field-hint">Cliente que ya habló con tu empresa pero nadie lo recuerda</div>
+    </div>
+    <div class="field">
+      <label>¿Cuántas propuestas o cotizaciones quedan sin seguimiento cada mes?</label>
+      <input type="number" id="lost_proposals" placeholder="Ej: 10" min="0">
+      <div class="field-hint">Enviaste la propuesta... y nunca más preguntaste</div>
+    </div>
+    <div class="field">
+      <label>¿Qué porcentaje de tus ventas cerradas podrías haber multiplicado con upsell o recompra?</label>
+      <select id="upsell_pct">
+        <option value="">— Selecciona —</option>
+        <option value="10">Menos del 10% — casi no hay oportunidad</option>
+        <option value="20">~20% — algunos clientes vuelven</option>
+        <option value="35">~35% — hay potencial pero no lo trabajamos</option>
+        <option value="50">+50% — gran potencial de recompra sin explotar</option>
+      </select>
+      <div class="field-hint">Sin CRM, estas oportunidades nunca se activan</div>
+    </div>
+    <button class="next-btn" onclick="calcAll()">🔍 Ver mi diagnóstico completo ▾</button>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="results-wrap" id="results">
+
+  <div class="result-hero">
+    <h2>Tu costo de oportunidad estimado / año</h2>
+    <div class="big-loss" id="r_total_year">—</div>
+    <div class="big-loss-label">en pérdidas y oportunidades no capturadas</div>
+  </div>
+
+  <div class="grid3">
+    <div class="kpi red"><div class="kv" id="r_leads_lost_n">—</div><div class="kl">leads quemados / mes</div></div>
+    <div class="kpi red"><div class="kv" id="r_cost_lead">—</div><div class="kl">costo por lead desperdiciado</div></div>
+    <div class="kpi yellow"><div class="kv" id="r_hours_year">—</div><div class="kl">horas de equipo perdidas / año</div></div>
+  </div>
+
+  <div class="pain-block">
+    <h4>🩸 Desglose del dolor — pérdida mensual estimada</h4>
+    <div class="pain-row"><span class="pl">Leads sin respuesta rápida (+5 min)</span><span class="pv" id="p_late">—</span></div>
+    <div class="pain-row"><span class="pl">Leads sin seguimiento suficiente</span><span class="pv" id="p_followup">—</span></div>
+    <div class="pain-row"><span class="pl">Leads sin calificar / sin pipeline</span><span class="pv" id="p_unq">—</span></div>
+    <div class="pain-row"><span class="pl">Leads caídos entre vendedores</span><span class="pv" id="p_dup">—</span></div>
+    <div class="pain-row"><span class="pl">Propuestas sin seguimiento</span><span class="pv" id="p_prop">—</span></div>
+    <div class="pain-row"><span class="pl">Ventas perdidas por falta de historial</span><span class="pv" id="p_hist">—</span></div>
+    <div class="pain-row"><span class="pl">Upsell / recompra no activada</span><span class="pv" id="p_upsell">—</span></div>
+    <div class="pain-row" style="border-top:1px solid #ff4d4d33;margin-top:.5rem;padding-top:.75rem"><span class="pl" style="color:#fefefe;font-weight:600">Total pérdida mensual estimada</span><span class="pv" style="font-size:1.1rem;color:#ff4d4d" id="p_total_month">—</span></div>
+  </div>
+
+  <div class="insight-box">
+    <div class="ib-title">⚡ Costo del tiempo de tu equipo</div>
+    <p id="insight_team">—</p>
+  </div>
+
+  <!-- BENCHMARK -->
+  <div class="section" style="border-color:#007ff633;margin:1rem 0">
+    <div class="sec-header" onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.chevron').classList.toggle('open')">
+      <div class="sec-left"><div class="sec-icon">📊</div><div class="sec-info"><h3>Benchmark: tú vs. empresas con CRM</h3><p>¿Qué diferencia hace el sistema?</p></div></div>
+      <span class="chevron">▾</span>
+    </div>
+    <div class="sec-body">
+      <div class="bench-grid">
+        <div class="bench-card yours"><div class="bt">Tu tasa de cierre hoy</div><div class="bv" id="b_yours">—</div><div class="bs">sin sistema centralizado</div></div>
+        <div class="bench-card crm"><div class="bt">Promedio con CRM activo</div><div class="bv" id="b_crm">—</div><div class="bs">benchmark InsideSales / HubSpot</div></div>
+      </div>
+      <div class="insight-box" style="margin-top:.5rem">
+        <div class="ib-title">💡 Oportunidad de conversión</div>
+        <p id="bench_insight">—</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROYECCIÓN 3 AÑOS -->
+  <div class="section" style="border-color:#ff4d4d33;margin:1rem 0">
+    <div class="sec-header" onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.chevron').classList.toggle('open')">
+      <div class="sec-left"><div class="sec-icon">📅</div><div class="sec-info"><h3>Proyección: 3 años sin CRM</h3><p>El costo de seguir igual</p></div></div>
+      <span class="chevron">▾</span>
+    </div>
+    <div class="sec-body">
+      <div class="timeline" id="timeline"></div>
+      <div class="insight-box" style="background:#ff4d4d0a;border-color:#ff4d4d33;margin-top:.5rem">
+        <div class="ib-title" style="color:#ff9090">🕐 Costo acumulado</div>
+        <p id="timeline_insight" style="color:#ffb0b0">—</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- KOMMO COST -->
+  <div class="section" style="border-color:#49ff9b33;margin:1rem 0">
+    <div class="sec-header" onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.chevron').classList.toggle('open')">
+      <div class="sec-left"><div class="sec-icon">🚀</div><div class="sec-info"><h3>Inversión estimada Kommo10X</h3><p>Costo real de implementar</p></div></div>
+      <span class="chevron">▾</span>
+    </div>
+    <div class="sec-body">
+      <div class="pain-row" style="border-bottom:1px solid #ffffff08;padding:8px 0"><span class="pl">Implementación única</span><span class="pv" style="color:#49ff9b">USD $1,500</span></div>
+      <div class="pain-row" style="border-bottom:1px solid #ffffff08;padding:8px 0"><span class="pl" id="k_lic_label">Licencias KommoCRM</span><span class="pv" style="color:#00ffff" id="k_lic">—</span></div>
+      <div class="pain-row" style="border-bottom:1px solid #ffffff08;padding:8px 0"><span class="pl" id="k_ai_label">IA / Automatización</span><span class="pv" style="color:#00ffff" id="k_ai">—</span></div>
+      <div class="pain-row" style="padding:10px 0;border-top:1px solid #49ff9b22;margin-top:.25rem"><span class="pl" style="color:#fefefe;font-weight:600">Costo mensual recurrente</span><span class="pv" style="color:#49ff9b;font-size:1.05rem" id="k_monthly">—</span></div>
+      <div class="pain-row" style="padding:8px 0"><span class="pl" style="color:#fefefe">Primer mes (incluye implementación)</span><span class="pv" style="color:#49ff9b" id="k_first">—</span></div>
+      <div class="pain-row" style="padding:8px 0;border-bottom:none"><span class="pl" style="color:#fefefe">Costo anual total</span><span class="pv" style="color:#49ff9b" id="k_annual">—</span></div>
+    </div>
+  </div>
+
+  <!-- COMPARE -->
+  <div class="compare-box">
+    <h3>⚖️ ¿Qué pesa más?</h3>
+    <div class="vs-grid">
+      <div class="vs-card bad"><div class="vct">Pérdida anual sin CRM</div><div class="vcv" id="c_loss">—</div></div>
+      <div class="vs-sym">VS</div>
+      <div class="vs-card good"><div class="vct">Inversión anual Kommo10X</div><div class="vcv" id="c_kommo">—</div></div>
+    </div>
+    <div class="diff-highlight">
+      <div class="dl">Oportunidad recuperable / año</div>
+      <div class="dv" id="c_diff">—</div>
+    </div>
+    <div class="verdict" id="verdict">—</div>
+  </div>
+
+  <!-- SOURCES -->
+  <div class="sources-box">
+    <div class="sources-title">📎 Fuentes y supuestos del cálculo</div>
+    <div class="src"><span class="sn">1</span><div><strong>Velocidad de respuesta:</strong> Contactar un lead después de 5 minutos reduce drásticamente la probabilidad de contacto y calificación. → <a href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads" target="_blank">Harvard Business Review – The Short Life of Online Sales Leads</a></div></div>
+    <div class="src"><span class="sn">2</span><div><strong>Seguimiento y persistencia:</strong> La mayoría de vendedores abandona antes de hacer los intentos necesarios para cerrar. → <a href="https://blog.hubspot.com/sales/sales-follow-up-infographic" target="_blank">HubSpot – Sales Follow-Up Statistics</a></div></div>
+    <div class="src"><span class="sn">3</span><div><strong>Tiempos de respuesta y conversión:</strong> El tiempo de respuesta es el predictor más fuerte de conversión en leads digitales. → <a href="https://resources.insidesales.com/wp-content/uploads/2019/11/infograpic-_LeadRespMgmt.pdf" target="_blank">InsideSales – Lead Response Management (PDF)</a></div></div>
+    <div class="src"><span class="sn">4</span><div><strong>Plataforma Kommo10X:</strong> Estructura de precios e implementación. → <a href="https://crmformeta.com/kommo10x/" target="_blank">CRM For Meta – Kommo10X</a></div></div>
+    <div class="disclaimer">⚠️ Los cálculos son estimaciones basadas en benchmarks de industria y datos ingresados por el usuario. No representan una garantía de resultados. Las pérdidas reales pueden variar según sector, mercado y ejecución del equipo comercial.</div>
+  </div>
+
+  <button class="cta-btn" onclick="window.open('https://crmformeta.com/kommo10x/','_blank')">Quiero implementar Kommo10X →</button>
+  <button class="reset-btn" onclick="resetAll()">↺ Recalcular con nuevos datos</button>
+</div>
+
+</main> 
+
+<footer style="background: #04001c; padding: 50px 0; border-top: 1px solid #1f1f1f; text-align: center;">
+      <div class="container">
+          
+          <div class="logo-footer" style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 25px;">
+              <img src="media/logo.png" alt="Gmarketing Logo" style="max-height: 40px;">
+          </div>
+          
+          <div class="copyright" style="color: #888; margin-bottom: 30px; font-size: 0.9rem; font-family: var(--font-regular);">
+              © Copyright <span id="year"></span> | Una estrategia de Gmarketing S.A.S 
+              <a href="https://gmarketing.co/" target="_blank" style="color: var(--color-accent-green);">www.gmarketing.co</a>
+              
+              <div style="margin-top: 10px; font-size: 0.85rem;">
+                  <a href="#" onclick="popupprivacy(); return false;" style="color: #aaa; margin-right: 15px; text-decoration: underline;">Política de Privacidad</a>
+                  <a href="#" onclick="popupwarranty(); return false;" style="color: #aaa; text-decoration: underline;">Política de Garantía</a>
+              </div>
+          </div>
+          
+          <div class="footer-links-grid">
+              <div class="footer-column">
+                  <a href="https://crmformeta.com/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0; font-family: var(--font-bold);">www.crmformeta.com</a>
+                  <a href="https://crmformeta.com/kommo10x/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0; font-family: var(--font-bold);">/kommo10x</a>
+                  <a href="https://crmformeta.com/kommo10x/agenda/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0; font-family: var(--font-bold);">/agenda</a>
+                  <a href="https://crmformeta.com/documentacion/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0; font-family: var(--font-bold);">/documentacion</a>
+                  <a href="https://crmformeta.com/brief/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0; font-family: var(--font-bold);">/brief</a>
+                  <a href="https://crmformeta.com/exito/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0; font-family: var(--font-bold);">/exito</a>
+              </div>
+              <div class="footer-column">
+                  <a href="https://www.gmarketing.co/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0; font-family: var(--font-bold);">www.gmarketing.co</a>
+                  <a href="http://amocrm.com.co/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0; font-family: var(--font-bold);">www.amocrm.com.co</a>
+                  <a href="https://www.gmarketing.co/dircomercial/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0; font-family: var(--font-bold);">/dircomercial</a>
+                  <a href="https://www.gmarketing.co/dircomercial/agenda/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0; font-family: var(--font-bold);">/agenda</a>
+                  <a href="https://gmarketing.co/brief/" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0; font-family: var(--font-bold);">/brief</a>
+                  <a href="https://gmarketing.co/exito" target="_blank" style="display: block; color: #ccc; font-size: 0.9rem; padding: 5px 0; font-family: var(--font-bold);">/exito</a>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+  <script>
+  // Pequeño script para el año del footer
+  document.addEventListener('DOMContentLoaded', function() {
+      var yearEl = document.getElementById("year");
+      if(yearEl) yearEl.innerHTML = new Date().getFullYear();
+  });
+  </script>
+
+<script>
+const sections=[0,1,2,3];
+let completed=new Set();
+
+function fmt(n){return'USD $'+Math.round(n).toLocaleString('en-US')}
+function fmtn(n){return Math.round(n).toLocaleString('en-US')}
+
+function toggleSection(i){
+  const body=document.getElementById('body'+i);
+  const chev=document.getElementById('chev'+i);
+  const isOpen=body.classList.contains('open');
+  body.classList.toggle('open',!isOpen);
+  chev.classList.toggle('open',!isOpen);
+}
+
+function openSection(i){
+  document.getElementById('body'+i).classList.add('open');
+  document.getElementById('chev'+i).classList.add('open');
+  document.getElementById('sec'+i).scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function nextSection(i){
+  document.getElementById('body'+i).classList.remove('open');
+  document.getElementById('chev'+i).classList.remove('open');
+  document.getElementById('badge'+i).textContent='Completado';
+  document.getElementById('badge'+i).className='badge-complete';
+  const dot=document.getElementById('dot'+i);
+  dot.classList.remove('active');dot.classList.add('done');dot.textContent='✓';
+  document.getElementById('dlbl'+i).classList.remove('active');
+  if(i<3){
+    document.getElementById('line'+i).classList.add('done');
+    document.getElementById('dot'+(i+1)).classList.add('active');
+    document.getElementById('dlbl'+(i+1)).classList.add('active');
+    openSection(i+1);
+  }
+  completed.add(i);
+}
+
+function calcAll(){
+  nextSection(3);
+  document.getElementById('dot4').classList.add('active');
+  document.getElementById('dlbl4').classList.add('active');
+
+  const leads=parseFloat(document.getElementById('leads').value)||0;
+  const ticket=parseFloat(document.getElementById('ticket').value)||0;
+  const cr=parseFloat(document.getElementById('close_rate').value)||0;
+  const margin=parseFloat(document.getElementById('margin').value)||30;
+  const pNR=parseFloat(document.getElementById('no_response').value)||0;
+  const pLF=parseFloat(document.getElementById('lost_followup').value)||0;
+  const pUQ=parseFloat(document.getElementById('unqualified').value)||0;
+  const pDUP=parseFloat(document.getElementById('duplicated').value)||0;
+  const sellers=parseFloat(document.getElementById('sellers').value)||1;
+  const salary=parseFloat(document.getElementById('salary').value)||0;
+  const wh=parseFloat(document.getElementById('wasted_hours').value)||0;
+  const totalHours=parseFloat(document.getElementById('work_hours').value)||44;
+  const lostHist=parseFloat(document.getElementById('lost_history').value)||0;
+  const lostProp=parseFloat(document.getElementById('lost_proposals').value)||0;
+  const upsellPct=(parseFloat(document.getElementById('upsell_pct').value)||0)/100;
+
+  const crRate=cr/100;
+  const marginRate=margin/100;
+
+  const lateLeads=leads*(pNR/100);
+  const followLeads=leads*(pLF/100);
+  const unqLeads=leads*(pUQ/100);
+  const dupLeads=leads*(pDUP/100);
+  const totalLostLeads=Math.min(leads,lateLeads+followLeads+unqLeads+dupLeads);
+
+  const lossLate=lateLeads*crRate*ticket*marginRate;
+  const lossFollow=followLeads*crRate*ticket*marginRate;
+  const lossUnq=unqLeads*crRate*ticket*marginRate;
+  const lossDup=dupLeads*crRate*ticket*marginRate;
+  const lossProp=lostProp*ticket*marginRate;
+  const lossHist=lostHist*ticket*marginRate;
+  const monthlySales=leads*crRate*ticket;
+  const lossUpsell=monthlySales*upsellPct*marginRate;
+
+  const totalLostMonth=lossLate+lossFollow+lossUnq+lossDup+lossProp+lossHist+lossUpsell;
+  const totalLostYear=totalLostMonth*12;
+
+  const costPerLead=totalLostLeads>0?totalLostMonth/totalLostLeads:0;
+  const wastedHoursYear=wh*sellers*52;
+  const hourlyRate=salary>0&&totalHours>0?(salary/(totalHours*4)):0;
+  const teamTimeCostYear=wh*sellers*52*hourlyRate;
+
+  const grandTotal=totalLostYear+teamTimeCostYear;
+
+  document.getElementById('r_total_year').textContent=fmt(grandTotal);
+  document.getElementById('r_leads_lost_n').textContent=fmtn(totalLostLeads);
+  document.getElementById('r_cost_lead').textContent=fmt(costPerLead);
+  document.getElementById('r_hours_year').textContent=fmtn(wastedHoursYear)+' hrs';
+
+  document.getElementById('p_late').textContent=fmt(lossLate)+'/mes';
+  document.getElementById('p_followup').textContent=fmt(lossFollow)+'/mes';
+  document.getElementById('p_unq').textContent=fmt(lossUnq)+'/mes';
+  document.getElementById('p_dup').textContent=fmt(lossDup)+'/mes';
+  document.getElementById('p_prop').textContent=fmt(lossProp)+'/mes';
+  document.getElementById('p_hist').textContent=fmt(lossHist)+'/mes';
+  document.getElementById('p_upsell').textContent=fmt(lossUpsell)+'/mes';
+  document.getElementById('p_total_month').textContent=fmt(totalLostMonth)+'/mes';
+
+  if(salary>0&&wh>0){
+    document.getElementById('insight_team').innerHTML='Tu equipo pierde <strong>'+fmtn(wastedHoursYear)+' horas al año</strong> en tareas manuales — equivalente a <strong>'+fmt(teamTimeCostYear)+'</strong> en costo de nómina improductiva. Esas horas podrían usarse en atender leads y cerrar ventas.';
+  } else {
+    document.getElementById('insight_team').textContent='Completa salario y horas perdidas para calcular el costo de nómina improductiva.';
+  }
+
+  const crmBenchmark=Math.min(cr*1.6,55);
+  document.getElementById('b_yours').textContent=cr+'%';
+  document.getElementById('b_crm').textContent=Math.round(crmBenchmark)+'%';
+  const extraSales=leads*(crmBenchmark/100-crRate)*ticket*marginRate;
+  document.getElementById('bench_insight').innerHTML='Con una tasa de cierre similar al benchmark de empresas con CRM (<strong>'+Math.round(crmBenchmark)+'%</strong>), podrías estar generando <strong>'+fmt(extraSales)+' adicionales al mes</strong> en utilidad. Eso es <strong>'+fmt(extraSales*12)+'/año</strong> que hoy no estás capturando.';
+
+  const y1=totalLostYear;const y2=totalLostYear*2.1;const y3=totalLostYear*3.4;
+  const maxY=y3;
+  const tl=document.getElementById('timeline');
+  tl.innerHTML='';
+  [[1,y1],[2,y2],[3,y3]].forEach(([yr,val])=>{
+    const pct=Math.round((val/maxY)*100);
+    tl.innerHTML+=`<div class="tl-row"><div class="tl-year">Año ${yr}</div><div class="tl-bar-wrap"><div class="tl-bar" style="width:${pct}%"></div><div class="tl-val">${fmt(val)}</div></div></div>`;
+  });
+  document.getElementById('timeline_insight').innerHTML='Si nada cambia, en 3 años habrás dejado de capturar aproximadamente <strong>'+fmt(y3)+'</strong> en oportunidades. La proyección aumenta porque los leads sin calificar hoy son clientes que la competencia sí atendió.';
+
+  const licenses=sellers*25;
+  let aiCost=150,aiTier='Bajo (≤1,000 leads)';
+  if(leads>7000){aiCost=800;aiTier='Muy alto (>7,000)';}
+  else if(leads>3000){aiCost=500;aiTier='Alto (3,001–7,000)';}
+  else if(leads>1000){aiCost=300;aiTier='Medio (1,001–3,000)';}
+  const monthly=licenses+aiCost;
+  const first=1500+monthly;
+  const annual=1500+monthly*12;
+
+  document.getElementById('k_lic_label').textContent='Licencias ('+Math.round(sellers)+' × $25/mes)';
+  document.getElementById('k_lic').textContent=fmt(licenses)+'/mes';
+  document.getElementById('k_ai_label').textContent='IA / Automatización — '+aiTier;
+  document.getElementById('k_ai').textContent=fmt(aiCost)+'/mes';
+  document.getElementById('k_monthly').textContent=fmt(monthly)+'/mes';
+  document.getElementById('k_first').textContent=fmt(first);
+  document.getElementById('k_annual').textContent=fmt(annual)+'/año';
+
+  document.getElementById('c_loss').textContent=fmt(grandTotal)+'/año';
+  document.getElementById('c_kommo').textContent=fmt(annual)+'/año';
+  const diff=grandTotal-annual;
+  document.getElementById('c_diff').textContent=(diff>=0?'+':'')+fmt(diff);
+
+  let verdict='';
+  if(diff>0){
+    verdict=`<strong>El problema no es el costo del CRM.</strong> El problema es seguir operando sin sistema. Por cada peso que inviertes en Kommo10X, estás dejando de perder <strong>${(grandTotal/annual).toFixed(1)}x</strong> esa cantidad. La oportunidad recuperable estimada es <strong>${fmt(diff)}/año</strong>.`;
+  } else {
+    verdict=`Con los datos actuales la diferencia es ajustada. Revisa tus porcentajes de leads perdidos o agrega el salario del equipo para ver el costo real completo. Incluso una mejora del 10% en conversión hace que la inversión tenga retorno positivo en el primer mes.`;
+  }
+  document.getElementById('verdict').innerHTML=verdict;
+
+  document.getElementById('results').style.display='block';
+  document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function resetAll(){
+  document.querySelectorAll('input').forEach(i=>i.value='');
+  document.querySelectorAll('select').forEach(s=>s.value='');
+  document.getElementById('results').style.display='none';
+  for(let i=0;i<4;i++){
+    document.getElementById('body'+i).classList.remove('open');
+    document.getElementById('chev'+i).classList.remove('open');
+    document.getElementById('badge'+i).textContent='Pendiente';
+    document.getElementById('badge'+i).className='badge-pending';
+    const dot=document.getElementById('dot'+i);
+    dot.classList.remove('done','active');dot.textContent=i+1;
+    document.getElementById('dlbl'+i).classList.remove('active');
+    if(i<4) document.getElementById('line'+i)&&document.getElementById('line'+i).classList.remove('done');
+  }
+  document.getElementById('dot0').classList.add('active');
+  document.getElementById('dlbl0').classList.add('active');
+  document.getElementById('body0').classList.add('open');
+  document.getElementById('chev0').classList.add('open');
+  document.getElementById('dot4').classList.remove('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

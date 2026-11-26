@@ -1,0 +1,20 @@
+# crmformeta.com - SEO técnico (2026-11-25)
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .txt .xml .html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# www -> sin www
+RewriteCond %{HTTP_HOST} ^www\.crmformeta\.com$ [NC]
+RewriteRule ^(.*)$ https://crmformeta.com/$1 [R=301,L]
+# /index.html -> /
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+</IfModule>
+
+# No indexar páginas de entregables de clientes
+<IfModule mod_headers.c>
+<If "%{REQUEST_URI} =~ m#^/(entregables|brief|brief-n8x)/#">
+Header set X-Robots-Tag "noindex, nofollow"
+</If>
+</IfModule>

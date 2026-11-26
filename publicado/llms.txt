@@ -1,0 +1,30 @@
+# CRMformeta (Gmarketing)
+
+> CRMformeta es el sitio de Gmarketing S.A.S. (Cali, Colombia) y Gmarketing USA LLC (Miami, EE. UU.), partner oficial de Kommo CRM. Implementa Kommo CRM para equipos comerciales B2C de 3 a 20 vendedores que reciben leads por WhatsApp, Instagram, Facebook y formularios web, con la metodología Kommo10X, agentes de IA en n8n y medición de conversiones con la API de Conversiones de Meta.
+
+## Servicios
+
+- [Kommo10X: implementación de Kommo CRM](https://crmformeta.com/kommo10x/): configuración de embudos, conexión de WhatsApp API, Instagram y Facebook, salesbots, agentes de IA, capacitación del equipo y acompañamiento semanal durante 35 días.
+- [Soluciones agénticas](https://crmformeta.com/soluciones_agenticas/): tres servicios mensuales sobre Kommo. N8X (automatizaciones y agentes de IA en n8n que conectan formularios, WhatsApp y Kommo), Tracking GM (envío de ventas y etapas de Kommo a Meta por la API de Conversiones) y KommoPower GM (operación de Kommo con IA: salesbots, plantillas, auditorías, reportes y limpieza de duplicados).
+- [Licencias de Kommo CRM](https://crmformeta.com/#precios): venta de licencias Básico, Avanzado, Pro y Empresarial como partner de Kommo.
+- [Diagnóstico comercial gratuito](https://crmformeta.com/kommo10x/agenda/): reunión por Zoom de 20 a 30 minutos para revisar el volumen de leads y el plan de Kommo adecuado.
+
+## Herramientas
+
+- [Calculadora de costos](https://crmformeta.com/calculadora/)
+- [CRM para WhatsApp y redes sociales](https://crmformeta.com/crm_para_whatsapp/)
+- [Documentación de Kommo CRM](https://crmformeta.com/documentacion/)
+
+## Políticas
+
+- [Política de privacidad](https://crmformeta.com/privacidad/)
+- [Garantía Kommo10X](https://crmformeta.com/garantia/)
+
+## Contacto
+
+- Correo: comercial@gmarketing.co
+- Teléfono y WhatsApp: +57 321 6319137
+- Gmarketing S.A.S.: Calle 26N # 5AN-50, Cali, Colombia
+- Gmarketing USA LLC: 31 SE 5th St, Apto 3310, Miami, FL 33131, EE. UU.
+- Perfil de partner en Kommo: https://www.kommo.com/es/socios/encontrar-socio/gmarketing-s-a-s-gmarketing-usa-llc/
+- Sitio corporativo: https://gmarketing.co/

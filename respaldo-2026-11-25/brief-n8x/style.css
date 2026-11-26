@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+  --color-background: linear-gradient(180deg, #140C2B 0%, #0A2282 40%, #140C2B 100%);
+  --color-card-bg: #00052c;
+  --color-card-border: #1f234f;
+  --color-header: #49ff9b;
+  --color-label: #e6e9ff;
+  --color-input-bg: #fff;
+  --color-input-border: #2b3070;
+  --color-button: #49ff9b;
+  --font-family: 'Open Sans', sans-serif;
+}
+
+/* Fondo con degradado tipo Gmarketing */
+body {
+  background: var(--color-background);
+  background-attachment: fixed;
+  color: var(--color-label);
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Contenedor principal */
+.container {
+  width: 100%;
+  max-width: 900px;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Logo superior */
+.logo {
+  display: block;
+  width: 380px;
+  margin: 0 auto 30px;
+  max-width: 90%;
+  height: auto;
+}
+
+/* Tarjeta central */
+.card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Títulos */
+h1 {
+  text-align: center;
+  color: var(--color-header);
+  font-size: 28px;
+  border-bottom: 1px solid var(--color-header);
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+
+h2 {
+  color: #fff;
+  font-size: 18px;
+  margin-top: 35px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Etiquetas */
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: var(--color-label);
+  text-align: left;
+}
+
+/* Inputs y Textareas */
+input[type="text"],
+textarea {
+  width: 100%;
+  border: 1px solid var(--color-input-border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 15px;
+  background: var(--color-input-bg);
+  color: #000;
+  resize: vertical;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+}
+
+textarea:focus,
+input[type="text"]:focus {
+  border-color: var(--color-header);
+  outline: none;
+  box-shadow: 0 0 6px rgba(73, 255, 155, 0.5);
+}
+
+/* Ajuste de altura mínima */
+textarea {
+  min-height: 90px;
+}
+
+/* Botón de acción */
+.actions {
+  text-align: center;
+  margin-top: 45px;
+}
+
+.btn-submit {
+  background-color: var(--color-button);
+  color: #000;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 2px 12px rgba(73, 255, 155, 0.4);
+}
+
+.btn-submit:hover {
+  background-color: #00e882;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+}
+
+/* ✅ Adaptabilidad: tablets y celulares */
+@media (max-width: 992px) {
+  .container {
+    padding: 30px 15px;
+  }
+
+  .card {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .logo {
+    width: 280px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    align-items: stretch;
+  }
+
+  .container {
+    padding: 20px 10px;
+  }
+
+  .card {
+    border-radius: 10px;
+    padding: 25px 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 16px;
+    margin-top: 25px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input[type="text"],
+  textarea {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .logo {
+    width: 350px;
+    margin: 20px auto;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+  }
+}

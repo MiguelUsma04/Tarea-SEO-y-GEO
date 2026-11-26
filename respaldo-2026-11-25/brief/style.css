@@ -1,0 +1,262 @@
+@font-face {
+    font-family: 'monse'; /*a name to be used later*/
+    src: url('fonts/Montserrat-Bold.otf'); /*URL to font "Helvetica Neue",Helvetica,Arial,sans-serif;*/ 
+}
+
+@font-face {
+    font-family: 'monse2'; /*a name to be used later*/
+    src: url('fonts/Montserrat-ExtraBold.otf'); /*URL to font*/ 
+}
+
+@font-face {
+    font-family: 'monse3'; /*a name to be used later*/
+    src: url('fonts/TrasandinaBlack.otf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'monse4'; /*a name to be used later*/
+    src: url('fonts/Montserrat-Regular.ttf'); /*URL to font*/
+} 
+
+
+p {
+    margin: 10px 10px 50px 10px;
+    font-family: 'monse4';
+    font-size: 24px;
+}
+
+
+
+body {
+    font-family: 'monse4', sans-serif;
+    text-align: center;
+    /* background: rgb(20,11,40);
+background: linear-gradient(0deg, rgba(20,11,40,1) 0%, rgba(10,34,130,1) 36%, rgba(10,34,130,1) 60%, rgba(20,11,40,1) 100%); */
+    /* background: rgb(20,11,40);
+background: linear-gradient(0deg, rgba(20,11,40,1) 0%, rgba(10,34,130,1) 16%, rgba(10,34,130,1) 85%, rgba(20,11,40,1) 100%); */
+    padding: 20px 0 40px;
+    background: rgb(20,11,40);
+    background: linear-gradient(0deg, rgba(20,11,40,1) 0%, rgba(10,34,130,1) 7%, rgba(10,34,130,1) 80%, rgba(20,11,40,1) 100%);
+}
+
+
+.maininfo {
+    width: 85%;
+    display: inline-block;
+}
+
+.titulobrief {
+    text-align: center;
+    font-size: 29px;
+    font-weight: bold;
+    color: #03FF90;
+    margin-top: 40px;
+}
+.titulobrief h3{
+    border-bottom: 1px solid #03FF90;
+    /* font-size: 24px; */
+    font-family: 'monse2';
+}
+.titulobriefa {
+    text-align: center;
+    font-size: 29px;
+    font-weight: bold;
+    color: #F96201;
+    margin-top: 40px;
+}
+
+input.inputform22 {
+    width: 95%;
+    border: none;
+    border-bottom: solid 1px #F96201;
+    font-size: 19px;
+}
+input{
+    color: #000;
+}
+
+.blockask {
+    margin-bottom: 1em;
+    color: #fff;
+}
+
+.titleim {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 3px;
+    font-family: monse4;
+}
+
+
+
+
+
+
+
+textarea.inputform22 {
+    border: none;
+    border-bottom: solid 1px #48a3d3;
+    width: 100% !important;
+    font-size: 19px;
+    text-align: center;
+    font-family: inherit;
+}
+
+
+.blockb {
+    font-size: 20px;
+    padding: 10px 4px;
+    background-color: #03FF90;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'monse2';
+}
+
+
+
+button.btn.standard-button {
+    background-color: #ff1100;
+    border: 2px solid #000;
+    border-radius: 50px;
+    color: #fff;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    padding: 8px 25px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    cursor: pointer;
+}
+
+.botfin {
+
+    text-align: center;
+}
+
+
+img.franjamob {
+    width: 30%;
+}
+
+
+.graciasti {
+    text-align: center;
+    font-size: 29px;
+    font-weight: bold;
+    color: #1a86c1;
+    margin-top: 100px;
+}
+
+
+
+.formulario{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.campos{
+    /* display: flex; */
+    margin-bottom: 10px;
+}
+
+.textarea{
+    height: 165px;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-top: inherit;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 25px;
+}
+
+
+.btn-green {
+    padding: 10px;
+    background-color: #03ff90;
+    border-radius: 10px;
+    color: #000000;
+    font-weight: 700;
+    font-size: 15px;
+    /* margin-bottom: 5px; */
+    font-family: 'monse';
+    box-shadow: 0px 2px 12px 5px rgb(70 253 255 / 39%);
+}
+
+.btn-green:focus, .btn-green:hover {
+    /* color: #fff; */
+    background: #00e882;
+    /* transform: scale(1.5) !important; */
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+}
+
+
+.btn-green2 {
+    padding: 10px;
+    background-color: #03ff90;
+    border-radius: 10px;
+    color: #000000;
+    font-weight: 700;
+    font-size: 26px;
+    /* margin-bottom: 5px; */
+    box-shadow: 0px 2px 12px 5px rgb(70 253 255 / 39%);
+}
+
+.btn-green2:focus, .btn-green2:hover {
+    /* color: #fff; */
+    background: #00e882;
+    /* transform: scale(1.5) !important; */
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+}
+
+@media only screen and (max-width: 900px) {
+
+
+    img.franjamob {
+        display: inline-block;
+        /* text-align: center; */
+        width: 73%;
+    }
+
+
+    html {
+        background-image: none;
+    }
+
+
+    .maininfo {
+        width: 100%;
+        
+    }
+
+    .formulario{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .titulobriefa{
+        font-size: 20px;
+    } 
+
+}

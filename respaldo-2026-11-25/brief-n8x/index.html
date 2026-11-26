@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brief N8X – GMarketing SAS</title>
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        
+        <div class="card">
+        <img class="logo" src="logo.png" alt="GMarketing Logo">
+      <h1>BRIEF N8X</h1>
+
+      <form id="briefForm">
+
+        <!-- Sección 1 -->
+        <h2>🧠 Conociendo el negocio</h2>
+        
+        <label>Nombre de la Empresa</label>
+        <textarea name="q0" required placeholder="Ejemplo: Prueba Empresa LLC"></textarea>
+
+        <label>¿Qué hace su empresa y cuál es su propuesta principal?</label>
+        <textarea name="q1" required placeholder="Ejemplo: Somos una clínica estética enfocada en tratamientos faciales no invasivos..."></textarea>
+
+        <label>¿Qué parte del proceso quieren automatizar y por qué?</label>
+        <textarea name="q2" required placeholder="Ejemplo: Queremos automatizar la atención inicial para calificar leads más rápido..."></textarea>
+
+        <label>¿Cómo funciona hoy y cuál es el principal problema?</label>
+        <textarea name="q3" required placeholder="Ejemplo: Todo es manual y dependemos de respuestas por WhatsApp, lo que retrasa cierres..."></textarea>
+
+        <!-- <label>¿Qué esperan lograr con el agente (más ventas, citas, ahorro de tiempo, mejor atención)?</label>
+        <textarea name="q4" required placeholder="Ejemplo: Aumentar la conversión de leads y reducir el tiempo de respuesta."></textarea> -->
+
+        <!-- Sección 2 -->
+        <h2>🤖 Definiendo el agente</h2>
+
+        <label>¿Qué tono debe tener el agente? (formal, casual, empático, directo)</label>
+        <input type="text" name="q4" required placeholder="Ejemplo: Cercano y empático.">
+
+        <label>¿Cuál es su objetivo principal? (vender, agendar, calificar leads, atender clientes)</label>
+        <input type="text" name="q5" required placeholder="Ejemplo: Agendar citas con leads calificados.">
+
+        <label>¿En qué momento debe pasar la conversación a un humano?</label>
+        <textarea name="q6" required placeholder="Ejemplo: Cuando el cliente pide hablar con un asesor o pregunta por precios personalizados."></textarea>
+        
+        <label>¿Que datos debe solicitar el agente de IA antes de pasarlo a un humano?</label>
+        <textarea name="q7" required placeholder="Ejemplo: Servicio interes, nombre, correo, etc."></textarea>
+
+        <!-- <label>¿Desean que solo responda o también envíe mensajes proactivos?</label>
+        <input type="text" name="q8" required placeholder="Ejemplo: Que también envíe mensajes proactivos."> -->
+
+        <!-- Sección 3 -->
+        <h2>✍️ Construcción del prompt</h2>
+
+        <label>¿Cómo se llamará el agente y cómo debe presentarse?</label>
+        <input type="text" name="q8" required placeholder="Ejemplo: Soy Dina, asistente virtual de Doll House Spa.">
+
+        <label>¿Qué información debe dominar (productos, precios, servicios, políticas)?</label>
+        <textarea name="q9" required placeholder="Ejemplo: Servicios, precios, promociones y políticas de atención."></textarea>
+
+        <label>¿Qué tipo de mensajes o respuestas debe evitar?</label>
+        <textarea name="q10" required placeholder="Ejemplo: No debe dar precios no confirmados ni hacer promesas médicas."></textarea>
+
+        <!-- Sección 4 -->
+        <h2>✅ Cierre</h2>
+
+        <label>¿Cuáles son los casos o flujos más importantes a cubrir primero?</label>
+        <textarea name="q11" required placeholder="Ejemplo: Captación de leads, agendamiento y recordatorios automáticos."></textarea>
+
+        <label>¿Quién validará los avances del proyecto?</label>
+        <input type="text" name="q12" required placeholder="Ejemplo: Ana Calera – Directora de Operaciones.">
+
+        <!-- <label>¿Cómo medirán el éxito del agente (KPI principal)?</label>
+        <input type="text" name="q14" required placeholder="Ejemplo: % de leads calificados, citas agendadas o ventas cerradas."> -->
+
+        <div class="actions">
+          <button type="submit" class="btn-submit">Enviar información</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</body>
+
+<script>
+document.getElementById('briefForm').addEventListener('submit', async function(e) {
+    e.preventDefault(); // Evita el envío normal del form
+    
+    const form = this;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    // Crear un contenedor visual para el mensaje si no existe
+    let alertBox = document.getElementById('alertBox');
+    if (!alertBox) {
+        alertBox = document.createElement('div');
+        alertBox.id = 'alertBox';
+        alertBox.style.cssText = `
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            font-family: 'Open Sans', sans-serif;
+            transition: all 0.4s ease;
+        `;
+        form.parentNode.appendChild(alertBox);
+    }
+
+    // Mostrar estado de carga
+    alertBox.textContent = '⏳ Enviando información...';
+    alertBox.style.background = '#002366';
+    alertBox.style.color = '#fff';
+
+    try {
+        const response = await fetch('https://n8n.srv802743.hstgr.cloud/webhook/b-n8x', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            // Mostrar mensaje visual de éxito
+            alertBox.innerHTML = '✅ ¡Gracias! La información fue enviada con éxito.';
+            alertBox.style.background = '#49ff9b';
+            alertBox.style.color = '#000';
+            form.reset();
+
+            // Animación de salida después de 4 segundos
+            setTimeout(() => {
+                alertBox.style.opacity = '0';
+                setTimeout(() => alertBox.remove(), 500);
+            }, 4000);
+        } else {
+            alertBox.innerHTML = '❌ Error al enviar. Por favor intenta de nuevo.';
+            alertBox.style.background = '#ff4d4d';
+            alertBox.style.color = '#fff';
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alertBox.innerHTML = '⚠️ Error de conexión. Verifica tu internet.';
+        alertBox.style.background = '#ffae42';
+        alertBox.style.color = '#000';
+    }
+});
+</script>
+
+
+</html>
