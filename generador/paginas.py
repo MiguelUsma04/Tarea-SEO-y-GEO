@@ -15,15 +15,15 @@ LICENCIAS_TABLA = """<div class="tbl"><table>
 </table></div><p>Compra mínima de 6 meses en todos los planes.</p>"""
 
 # Calculadora de licencias: asesores × plan × meses. Precios = tabla LICENCIAS_TABLA.
-CALC_ASESORES = """<div id="calc-asesores" style="background:#eef0fb;border-radius:10px;padding:16px;margin:12px 0">
-<h3 style="margin-top:0">Calcula las licencias de tu equipo</h3>
-<p style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:8px">
-<label>Asesores <input id="ca-n" type="number" min="1" max="200" value="5" style="width:80px;padding:6px"></label>
-<label>Plan <select id="ca-p" style="padding:6px"><option value="20">Básico (USD 20)</option><option value="30" selected>Avanzado (USD 30)</option><option value="45">Pro (USD 45)</option></select></label>
-<label>Meses <select id="ca-m" style="padding:6px"><option value="6">6</option><option value="8">8</option><option value="10">10</option><option value="12" selected>12</option><option value="18">18</option></select></label>
-</p>
-<p id="ca-out" style="font-family:monse,sans-serif;margin-bottom:4px"></p>
-<p style="font-size:.85rem;color:#4b4b6b;margin:0">Precio de lista de Kommo por usuario al mes, compra mínima de 6 meses. No incluye mensajes de WhatsApp API ni implementación.</p>
+CALC_ASESORES = """<div class="gm-calc" id="calc-asesores">
+<h3>Calcula las licencias de tu equipo</h3>
+<div class="gm-calc-row">
+<label>Asesores <input id="ca-n" type="number" min="1" max="200" value="5"></label>
+<label>Plan <select id="ca-p"><option value="20">Básico (USD 20)</option><option value="30" selected>Avanzado (USD 30)</option><option value="45">Pro (USD 45)</option></select></label>
+<label>Meses <select id="ca-m"><option value="6">6</option><option value="8">8</option><option value="10">10</option><option value="12" selected>12</option><option value="18">18</option></select></label>
+</div>
+<p class="gm-calc-out" id="ca-out"></p>
+<p class="gm-calc-note">Precio de lista de Kommo por usuario al mes, compra mínima de 6 meses. No incluye mensajes de WhatsApp API ni implementación.</p>
 <script>(function(){var n=document.getElementById('ca-n'),p=document.getElementById('ca-p'),m=document.getElementById('ca-m'),o=document.getElementById('ca-out');
 function f(x){return 'USD '+x.toLocaleString('es-CO')}
 function c(){var a=Math.max(1,parseInt(n.value||1,10)),pr=+p.value,me=+m.value,mes=a*pr;o.textContent=a+' asesores en '+p.options[p.selectedIndex].text.split(' (')[0]+': '+f(mes)+' al mes · '+f(mes*me)+' por '+me+' meses.'}
@@ -33,7 +33,7 @@ function c(){var a=Math.max(1,parseInt(n.value||1,10)),pr=+p.value,me=+m.value,m
 PAGINAS = [
 # ------------------------------------------------------------------ 1
 {
- "slug": "/kommo-crm/", "crumb": "Implementación de Kommo CRM", "kind": "service",
+ "slug": "/kommo-crm/", "hl": "Kommo CRM", "crumb": "Implementación de Kommo CRM", "kind": "service",
  "title": "Implementación de Kommo CRM: precio, tiempos y qué incluye | Gmarketing",
  "desc": "La implementación Kommo10X cuesta USD 1.500, dura 35 días e incluye embudos, WhatsApp API, 3 agentes de IA en n8n, manuales y acompañamiento semanal.",
  "h1": "Implementación de Kommo CRM: precio, tiempos y qué incluye",
@@ -68,7 +68,7 @@ PAGINAS = [
 },
 # ------------------------------------------------------------------ 2
 {
- "slug": "/partner-kommo-colombia/", "crumb": "Partner de Kommo en Colombia", "kind": "service",
+ "slug": "/partner-kommo-colombia/", "hl": "Partner de Kommo", "crumb": "Partner de Kommo en Colombia", "kind": "service",
  "title": "Partner de Kommo en Colombia: Gmarketing (Cali y Miami)",
  "desc": "Gmarketing es partner oficial de Kommo con oficinas en Cali y Miami. Vende licencias, implementa Kommo con WhatsApp API e IA y opera Kommo por suscripción mensual.",
  "h1": "Partner de Kommo en Colombia: Gmarketing",
@@ -99,7 +99,7 @@ PAGINAS = [
 },
 # ------------------------------------------------------------------ 3
 {
- "slug": "/kommo-vs-leadsales/", "crumb": "Kommo vs Leadsales", "kind": "article",
+ "slug": "/kommo-vs-leadsales/", "hl": "Kommo vs Leadsales", "crumb": "Kommo vs Leadsales", "kind": "article",
  "title": "Kommo vs Leadsales: comparativa para equipos que venden por WhatsApp",
  "desc": "Comparativa de Kommo y Leadsales: canales, automatización, IA, precios por usuario y para qué tipo de equipo comercial conviene cada uno.",
  "h1": "Kommo vs Leadsales: cuál conviene para vender por WhatsApp",
@@ -131,7 +131,7 @@ PAGINAS = [
 },
 # ------------------------------------------------------------------ 4
 {
- "slug": "/blog/mejor-crm-whatsapp/", "crumb": "Mejor CRM para WhatsApp", "crumbs": [("Guías", "/blog/mejor-crm-whatsapp/")], "kind": "article",
+ "slug": "/blog/mejor-crm-whatsapp/", "hl": "CRM para WhatsApp", "crumb": "Mejor CRM para WhatsApp", "crumbs": [("Guías", "/blog/mejor-crm-whatsapp/")], "kind": "article",
  "title": "Mejor CRM para WhatsApp en 2026: cómo elegir y cuáles comparar",
  "desc": "Siete criterios para elegir un CRM para WhatsApp en 2026: API oficial, multiagente, embudos, automatización, IA, integraciones y precio por usuario.",
  "h1": "Mejor CRM para WhatsApp en 2026: cómo elegir",
@@ -155,7 +155,7 @@ PAGINAS = [
 },
 # ------------------------------------------------------------------ 5
 {
- "slug": "/whatsapp-multiagente/", "crumb": "WhatsApp multiagente", "kind": "service",
+ "slug": "/whatsapp-multiagente/", "hl": "WhatsApp multiagente", "crumb": "WhatsApp multiagente", "kind": "service",
  "title": "WhatsApp multiagente para empresas: cómo funciona y cuánto cuesta",
  "desc": "WhatsApp multiagente con Kommo: varios asesores en un mismo número, asignación automática de chats, notas internas y tableros. Desde USD 20 por usuario al mes.",
  "h1": "WhatsApp multiagente para empresas",
@@ -179,7 +179,7 @@ PAGINAS = [
 },
 # ------------------------------------------------------------------ 6
 {
- "slug": "/blog/precios-whatsapp-api-2026/", "crumb": "Precios de WhatsApp API 2026", "crumbs": [("Guías", "/blog/mejor-crm-whatsapp/")], "kind": "article",
+ "slug": "/blog/precios-whatsapp-api-2026/", "hl": "WhatsApp Business API", "crumb": "Precios de WhatsApp API 2026", "crumbs": [("Guías", "/blog/mejor-crm-whatsapp/")], "kind": "article",
  "title": "Precios de WhatsApp Business API en 2026 para Colombia",
  "desc": "Tarifas de WhatsApp Business API en Colombia desde octubre de 2026: marketing USD 0,0125; utilidad, autenticación y servicio USD 0,0008 por mensaje.",
  "h1": "Precios de WhatsApp Business API en 2026 para Colombia",
@@ -207,7 +207,7 @@ PAGINAS = [
 },
 # ------------------------------------------------------------------ 7
 {
- "slug": "/agente-ia-whatsapp/", "crumb": "Agente de IA para WhatsApp", "kind": "service",
+ "slug": "/agente-ia-whatsapp/", "hl": "Agente de IA", "crumb": "Agente de IA para WhatsApp", "kind": "service",
  "title": "Agente de IA para WhatsApp conectado a Kommo: N8X desde USD 200/mes",
  "desc": "N8X es un agente de IA para WhatsApp conectado a Kommo: responde 24/7, califica, agenda, mueve el lead en el embudo y llena los campos. Desde USD 200 al mes.",
  "h1": "Agente de IA para WhatsApp conectado a tu CRM",
@@ -239,7 +239,7 @@ PAGINAS = [
 },
 # ------------------------------------------------------------------ 8
 {
- "slug": "/blog/meta-business-agent/", "crumb": "Meta Business Agent vs agente propio", "crumbs": [("Guías", "/blog/mejor-crm-whatsapp/")], "kind": "article",
+ "slug": "/blog/meta-business-agent/", "hl": "Meta Business Agent", "crumb": "Meta Business Agent vs agente propio", "crumbs": [("Guías", "/blog/mejor-crm-whatsapp/")], "kind": "article",
  "title": "Meta Business Agent vs agente de IA propio conectado a tu CRM",
  "desc": "Cuándo alcanza el agente de IA nativo de WhatsApp Business y cuándo conviene un agente propio conectado a Kommo, con embudo, campos y métricas.",
  "h1": "Meta Business Agent vs agente de IA propio conectado a tu CRM",

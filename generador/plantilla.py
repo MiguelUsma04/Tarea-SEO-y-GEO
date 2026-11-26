@@ -21,57 +21,135 @@ GTM = "GTM-TPMR57QR"
 AGENDA = "/kommo10x/agenda/"
 
 CSS = """
-@font-face{font-family:'monse';src:url('/fonts/Montserrat-Bold.otf');font-display:swap}
-@font-face{font-family:'monse2';src:url('/fonts/Montserrat-ExtraBold.otf');font-display:swap}
-@font-face{font-family:'monse4';src:url('/fonts/Montserrat-Regular.ttf');font-display:swap}
-:root{--bg:#0e0142;--grad:linear-gradient(180deg,#0c072a,#11026f,#0e0055);--green:#03FF90;--cyan:#0faab6;--text:#00003e;--muted:#4b4b6b;--line:#e3e4ee;--paper:#f5f6fa}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'monse4',Arial,sans-serif;background:var(--paper);color:var(--text);line-height:1.65;font-size:17px}
-a{color:#11026f}
-.wrap{max-width:900px;margin:0 auto;padding:0 16px}
-.draft{background:#ffcc00;color:#000;text-align:center;font-family:'monse',sans-serif;font-size:.85rem;padding:6px 16px}
-header.top{background:var(--grad)}
-header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;padding-bottom:14px}
-header.top img{height:42px;width:auto;display:block}
-header.top nav{display:flex;gap:18px;align-items:center}
-header.top nav a{color:#fff;text-decoration:none;font-family:'monse',sans-serif;font-size:.85rem}
-header.top nav a.cta{background:var(--green);color:var(--bg);padding:9px 16px;border-radius:40px;white-space:nowrap}
-.hero{background:var(--grad);color:#fff;padding:34px 0 40px}
-.crumbs{font-size:.8rem;margin-bottom:14px;color:#c9c6ff}
-.crumbs a{color:var(--green)}
-h1{font-family:'monse2',sans-serif;font-size:clamp(1.7rem,4.5vw,2.6rem);line-height:1.15;margin-bottom:14px}
-.lead{font-size:1.1rem;max-width:760px}
-.updated{font-size:.8rem;color:#c9c6ff;margin-top:14px}
-main{padding:34px 0 50px}
-section.q{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px 22px 14px;margin-bottom:18px}
-h2{font-family:'monse',sans-serif;font-size:1.3rem;line-height:1.3;margin-bottom:10px}
-h3{font-family:'monse',sans-serif;font-size:1.05rem;margin:14px 0 6px}
-p,li{margin-bottom:10px}
-ul,ol{padding-left:22px}
-.answer{font-size:1.05rem}
-table{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:.95rem}
-th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
-th{background:#eef0fb;font-family:'monse',sans-serif}
-.tbl{overflow-x:auto}
-.pend{background:#fff7d1;color:#3a2e00;border:1px dashed #c9a400;border-radius:8px;padding:12px 14px;margin:10px 0 14px;font-size:.92rem}
-.pend strong{font-family:'monse',sans-serif;color:#3a2e00}
-.pend li{color:#3a2e00}
-.ctabox{background:var(--grad);color:#fff;border-radius:12px;padding:26px 22px;margin-top:26px;text-align:center}
-.ctabox p{margin-bottom:16px}
-.btn{display:inline-block;background:var(--green);color:var(--bg);font-family:'monse',sans-serif;padding:13px 24px;border-radius:40px;text-decoration:none}
-.rel{margin-top:26px}
-.rel ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
-.rel li a{display:block;background:#fff;border:1px solid var(--line);border-radius:8px;padding:12px 14px;text-decoration:none}
-footer{background:var(--bg);color:#c9c6ff;padding:26px 0;font-size:.85rem}
-footer a{color:#fff;margin-right:14px;display:inline-block;margin-bottom:6px}
-@media(max-width:640px){header.top nav a:not(.cta){display:none}header.top img{height:32px}header.top nav a.cta{font-size:.78rem;padding:8px 12px}section.q{padding:18px 16px 10px}}
+/* Componentes propios de las páginas AEO. El resto (encabezado, hero, contacto, pie,
+   botón de WhatsApp, tipografías y colores) viene de /style.css, la hoja del home. */
+.gm-card,.gm-answer,.gm-more,.pend,.hero-subtitle{overflow-wrap:anywhere}
+.gm-crumbs{font-family:var(--font-regular);font-size:.85rem;color:#a0a0b5;margin-bottom:18px}
+.gm-crumbs a{color:var(--color-accent-green)}
+.hero-section .main-title{margin-bottom:22px}
+.gm-hero-cta{margin-top:30px}
+.gm-updated{font-family:var(--font-regular);font-size:.85rem;color:#a0a0b5;margin-top:22px}
+.gm-main{background:var(--color-bg-dark);padding:70px 0 40px}
+.gm-narrow{max-width:960px}
+.gm-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:25px;box-shadow:0 5px 15px rgba(0,0,0,.2);padding:40px 44px;margin-bottom:30px}
+.gm-card h2{font-family:var(--font-bold);font-size:1.7rem;line-height:1.3;color:#fff;margin-bottom:20px}
+.gm-answer{background:rgba(3,255,144,.05);border-left:4px solid var(--color-accent-green);border-radius:8px;padding:22px 26px;font-family:var(--font-regular);font-size:1.08rem;line-height:1.7;color:#fff;margin-bottom:18px}
+.gm-more{font-family:var(--font-regular);color:#ddd;font-size:1.02rem;line-height:1.7}
+.gm-more p{margin:0 0 14px;line-height:1.7}
+.gm-more h3{font-family:var(--font-bold);color:var(--color-accent-green);font-size:1.15rem;margin:22px 0 10px}
+.gm-more ul,.gm-more ol{padding-left:22px;margin:0 0 14px}
+.gm-more ul{list-style:none;padding-left:0}
+.gm-more ul li{position:relative;padding-left:28px;margin-bottom:10px}
+.gm-more ul li::before{content:"✔";position:absolute;left:0;color:var(--color-accent-green);font-weight:700}
+.gm-more ol{list-style:decimal}
+.gm-more ol li{margin-bottom:8px;padding-left:4px}
+.gm-more ol li::marker{color:var(--color-accent-green);font-family:var(--font-bold)}
+.gm-more a,.gm-answer a{color:var(--color-accent-green);text-decoration:underline}
+.gm-more strong{color:#fff}
+.gm-table-wrap{overflow-x:auto;border-radius:16px;border:1px solid rgba(255,255,255,.15);margin:6px 0 16px}
+.gm-table-wrap table{width:100%;border-collapse:collapse;font-family:var(--font-regular)}
+.gm-table-wrap th{font-family:var(--font-bold);text-align:left;padding:16px 18px;background:rgba(255,255,255,.08);color:#fff;font-size:1rem}
+.gm-table-wrap td{padding:14px 18px;border-top:1px solid rgba(255,255,255,.1);font-size:1rem;color:#fff;vertical-align:top}
+.gm-calc{background:rgba(255,255,255,.04);border:1px solid rgba(3,255,144,.25);border-radius:16px;padding:22px 24px;margin:10px 0 18px}
+.gm-calc h3{margin-top:0}
+.gm-calc .gm-calc-row{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;margin-bottom:14px}
+.gm-calc label{display:flex;flex-direction:column;gap:6px;font-family:var(--font-bold);font-size:.85rem;color:#ccc}
+.gm-calc input,.gm-calc select{background:#0c072a;color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:10px 12px;font-family:var(--font-regular);font-size:1rem}
+.gm-calc input{width:100px}
+.gm-calc .gm-calc-out{font-family:var(--font-bold);color:var(--color-accent-green);font-size:1.15rem;margin-bottom:6px}
+.gm-calc .gm-calc-note{font-size:.85rem;color:#a0a0b5;margin:0}
+.pend{background:#fff7d1;color:#3a2e00;border:1px dashed #c9a400;border-radius:8px;padding:12px 14px;margin:14px auto;font-family:var(--font-regular);font-size:.92rem;text-align:left;max-width:800px;line-height:1.5}
+.pend strong{font-family:var(--font-bold);color:#3a2e00}
+.pend ul{list-style:disc;padding-left:20px;margin-top:6px}
+.pend li{color:#3a2e00;margin-bottom:4px}
+.gm-card .pend{max-width:none}
+.gm-draft{background:#ffcc00;color:#000;text-align:center;font-family:var(--font-bold);font-size:.85rem;padding:6px 16px}
+.gm-cta{background:var(--color-bg-gradient);padding:70px 0;text-align:center}
+.gm-cta p{font-family:var(--font-regular);color:#ccc;font-size:1.1rem;line-height:1.6;max-width:720px;margin:0 auto 30px}
+.gm-rel{background:var(--color-bg-dark);padding:60px 0 70px}
+.gm-rel-title{font-family:var(--font-bold);font-size:1.6rem;color:#fff;margin-bottom:30px}
+.gm-rel-title span{border-bottom:3px solid var(--color-accent-cyan)}
+.gm-rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.gm-rel-grid a{display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-bottom:2px solid rgba(15,170,182,.5);border-radius:12px;padding:20px 24px;font-family:var(--font-bold);color:#fff;transition:.3s}
+.gm-rel-grid a:hover{border-color:var(--color-accent-green);transform:translateY(-3px)}
+.gm-rel-grid a span{color:var(--color-accent-green);font-size:1.3rem}
+@media(min-width:768px){.footer-links-grid{grid-template-columns:1fr 1fr 1fr;max-width:900px;gap:40px}}
+@media(max-width:767px){.gm-table-wrap{border:0;overflow:visible}.gm-table-wrap table,.gm-table-wrap tbody,.gm-table-wrap tr,.gm-table-wrap td{display:block;width:100%}.gm-table-wrap tr:first-child{display:none}.gm-table-wrap tr{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px 16px;margin-bottom:10px}.gm-table-wrap td{border:0;padding:4px 0}.gm-table-wrap td::before{content:attr(data-label);display:block;font-family:var(--font-bold);font-size:.78rem;color:var(--color-accent-green);text-transform:uppercase;letter-spacing:.03em}.gm-table-wrap td:first-child{font-family:var(--font-bold);font-size:1.05rem}.gm-table-wrap td:first-child::before{display:none}}
+@media(max-width:767px){.gm-card{padding:26px 20px;border-radius:18px}.gm-card h2{font-size:1.3rem}.gm-answer{padding:18px;font-size:1rem}.gm-main{padding:40px 0 20px}.gm-cta,.gm-rel{padding:50px 0}}
 """
 
-NAV = [("/kommo-crm/", "Kommo CRM"), ("/agente-ia-whatsapp/", "Agente IA"), ("/blog/mejor-crm-whatsapp/", "Guías")]
-FOOT = [("/", "Inicio"), ("/kommo-crm/", "Implementación Kommo"), ("/partner-kommo-colombia/", "Partner Kommo Colombia"),
-        ("/agente-ia-whatsapp/", "Agente de IA para WhatsApp"), ("/whatsapp-multiagente/", "WhatsApp multiagente"),
-        ("/privacidad/", "Privacidad"), ("/garantia/", "Garantía")]
+FOOT_GUIAS = [("/kommo-crm/", "/kommo-crm"), ("/partner-kommo-colombia/", "/partner-kommo-colombia"),
+              ("/agente-ia-whatsapp/", "/agente-ia-whatsapp"), ("/whatsapp-multiagente/", "/whatsapp-multiagente"),
+              ("/costos_api/", "/costos_api"), ("/privacidad/", "/privacidad"), ("/garantia/", "/garantia")]
 
+SVG_IG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>'
+SVG_FB = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>'
+SVG_LI = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>'
+
+CONTACTO = f"""<section class="contact-section">
+  <div class="container">
+    <div class="contact-header"><h2 class="contact-title">NUESTRO CONTACTO</h2><div class="contact-line"></div></div>
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:comercial@gmarketing.co">
+        <div class="contact-icon-top"><img src="/media/iconoemail.webp" alt="Email"></div>
+        <div class="contact-text-center"><p>comercial@gmarketing.co</p></div>
+      </a>
+      <div class="contact-card location-card">
+        <div class="contact-icon-top"><img src="/media/iconoplace.webp" alt="Ubicación"></div>
+        <div class="contact-text-center">
+          <div class="loc-item"><img src="/media/us.png" class="flag" alt="USA"> <strong>Gmarketing USA LLC</strong><br><span class="small-address">Apto 3310, 31 SE 5th St, Miami, FL 33131</span></div>
+          <div class="loc-separator"></div>
+          <div class="loc-item"><img src="/media/co.png" class="flag" alt="Colombia"> <strong>Gmarketing SAS</strong><br><span class="small-address">Calle 26N # 5AN -50, Cali-Colombia</span></div>
+        </div>
+      </div>
+      <a class="contact-card clickllamar" href="tel:+573216319137">
+        <div class="contact-icon-top"><img src="/media/iconotel.webp" alt="Teléfono"></div>
+        <div class="contact-text-center"><p>+57 321 6319137</p></div>
+      </a>
+    </div>
+    <div class="social-connect">
+      <h3 class="social-title">Síguenos en nuestras redes</h3>
+      <div class="social-icons-wrapper">
+        <a href="https://www.instagram.com/gmarketing.co/" target="_blank" rel="noopener" class="social-btn instagram" aria-label="Instagram">{SVG_IG}</a>
+        <a href="https://www.facebook.com/gmarketing.co/" target="_blank" rel="noopener" class="social-btn facebook" aria-label="Facebook">{SVG_FB}</a>
+        <a href="https://www.linkedin.com/company/gmarketing-s-a-s/" target="_blank" rel="noopener" class="social-btn linkedin" aria-label="LinkedIn">{SVG_LI}</a>
+      </div>
+    </div>
+  </div>
+</section>"""
+
+PIE = """<footer>
+  <div class="container">
+    <div class="logo-footer"><img src="/media/logo.png" alt="Gmarketing Logo"></div>
+    <div class="copyright">
+      © Copyright <span id="year"></span> | Una estrategia de Gmarketing S.A.S
+      <a href="https://gmarketing.co/" target="_blank" rel="noopener">www.gmarketing.co</a>
+      <div style="margin-top: 15px; font-size: 0.85rem;">
+        <a href="/privacidad/" style="color: #aaa; margin-right: 15px; text-decoration: underline;">Política de Privacidad</a>
+        <a href="/garantia/" style="color: #aaa; text-decoration: underline;">Política de Garantía</a>
+      </div>
+    </div>
+    <div class="footer-links-grid">
+      <div class="footer-column">
+        <a href="https://crmformeta.com/" class="hover-button">www.crmformeta.com</a>
+        <a href="https://crmformeta.com/kommo10x/" class="hover-button">/kommo10x</a>
+        <a href="https://crmformeta.com/kommo10x/agenda/" class="hover-button">/agenda</a>
+        <a href="https://crmformeta.com/documentacion/" class="hover-button">/documentacion</a>
+        <a href="https://crmformeta.com/#casos" class="hover-button">/casos</a>
+      </div>
+      <div class="footer-column">
+        __GUIAS__
+      </div>
+      <div class="footer-column">
+        <a href="https://www.gmarketing.co/" target="_blank" rel="noopener" class="hover-button">www.gmarketing.co</a>
+        <a href="http://amocrm.com.co/" target="_blank" rel="noopener" class="hover-button">www.amocrm.com.co</a>
+        <a href="https://www.gmarketing.co/dircomercial/" target="_blank" rel="noopener" class="hover-button">/dircomercial</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<a class="butchatwhatsapp2" href="https://wa.me/573216319137" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><img src="/media/wpp.png" alt="WhatsApp"></a>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>"""
 
 def _txt(s):
     """Quita etiquetas para el texto del schema."""
@@ -118,21 +196,35 @@ def render(p):
         lis = "".join(f"<li>{i}</li>" for i in items)
         return f'<div class="pend"><strong>PENDIENTE antes de publicar:</strong><ul>{lis}</ul></div>'
 
+    def tablas(html_):
+        import re as _re
+        def etiquetar(m):
+            t = m.group(0)
+            heads = [_re.sub(r"<[^>]+>", "", x).strip() for x in _re.findall(r"<th[^>]*>(.*?)</th>", t, _re.S)]
+            def fila(r):
+                i = iter(heads)
+                return _re.sub(r"<td(?![^>]*data-label)", lambda _: f'<td data-label="{h.escape(next(i, ""))}"', r.group(0))
+            return _re.sub(r"<tr>(?:(?!</tr>).)*<td.*?</tr>", fila, t, flags=_re.S)
+        html_ = _re.sub(r"<table>.*?</table>", etiquetar, html_, flags=_re.S)
+        return html_.replace('<div class="tbl">', '<div class="gm-table-wrap">')
+
     secs = []
     for s in p["sections"]:
-        sid = s.get("id", "")
-        sid = f' id="{sid}"' if sid else ""
-        secs.append(f'<section class="q"{sid}><h2>{s["q"]}</h2><p class="answer">{s["a"]}</p>{s.get("more", "")}{pend(s.get("pend"))}</section>')
+        sid = f' id="{s["id"]}"' if s.get("id") else ""
+        more = f'<div class="gm-more">{tablas(s.get("more", ""))}</div>' if s.get("more") else ""
+        secs.append(f'<article class="gm-card"{sid}><h2>{s["q"]}</h2><div class="gm-answer">{s["a"]}</div>{more}{pend(s.get("pend"))}</article>')
     rel = ""
     if p.get("related"):
-        rel = '<div class="rel"><h2>Sigue leyendo</h2><ul>' + "".join(
-            f'<li><a href="{u}">{n}</a></li>' for u, n in p["related"]) + "</ul></div>"
+        rel = ('<section class="gm-rel"><div class="container gm-narrow"><h2 class="gm-rel-title">Sigue <span>leyendo</span></h2><div class="gm-rel-grid">'
+               + "".join(f'<a href="{u}">{n}<span>+</span></a>' for u, n in p["related"]) + "</div></div></section>")
     crumb_html = " › ".join(f'<a href="{u}">{n}</a>' for n, u in crumbs[:-1]) + f" › {crumbs[-1][0]}"
     robots = '<meta name="robots" content="noindex, nofollow">' if draft else '<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">'
-    banner = '<div class="draft">BORRADOR · no indexado · revisar los bloques amarillos antes de publicar</div>' if draft else ""
-    nav = "".join(f'<a href="{u}">{n}</a>' for u, n in NAV)
-    foot = "".join(f'<a href="{u}">{n}</a>' for u, n in FOOT)
+    banner = '<div class="gm-draft">BORRADOR · no indexado · revisar los bloques amarillos antes de publicar</div>' if draft else ""
+    h1 = p["h1"]
+    if p.get("hl") and p["hl"] in h1:
+        h1 = h1.replace(p["hl"], f'<span class="highlight-text">{p["hl"]}</span>', 1)
     cta = p.get("cta", ("Revisamos tu operación en una llamada de 20 a 30 minutos y te decimos qué plan de Kommo y qué automatizaciones necesitas.", "Agendar diagnóstico gratuito"))
+    guias = "\n        ".join(f'<a href="{u}" class="hover-button">{n}</a>' for u, n in FOOT_GUIAS)
 
     return f"""<!DOCTYPE html>
 <html lang="es">
@@ -155,29 +247,38 @@ def render(p):
   <meta property="og:image" content="{BASE}/share.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/media/favicon.ico">
+  <link rel="stylesheet" href="/style.css">
   <script type="application/ld+json">{ld}</script>
   <style>{CSS}</style>
 </head>
 <body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={GTM}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   {banner}
-  <header class="top"><div class="wrap"><a href="/"><img src="/media/logo.png" alt="CRMformeta - Gmarketing, partner de Kommo"></a><nav>{nav}<a class="cta" href="{AGENDA}">Agendar diagnóstico</a></nav></div></header>
-  <div class="hero"><div class="wrap">
-    <nav class="crumbs">{crumb_html}</nav>
-    <h1>{p['h1']}</h1>
-    <p class="lead">{p['lead']}</p>
-    {pend(p.get('pend_top'))}
-    <p class="updated">Última actualización: {HOY_TXT}</p>
-  </div></div>
-  <main><div class="wrap">
+  <header class="main-header">
+    <div class="container"><div class="logo-header-wrapper"><a href="/"><img src="/media/logo.png" alt="Gmarketing, partner de Kommo" class="header-logo"></a></div></div>
+    <div class="animated-border-bottom"></div>
+  </header>
+  <section class="hero-section">
+    <div class="container">
+      <nav class="gm-crumbs">{crumb_html}</nav>
+      <h1 class="main-title">{h1}</h1>
+      <p class="hero-subtitle">{p['lead']}</p>
+      {pend(p.get('pend_top'))}
+      <div class="gm-hero-cta"><a class="btn-neon-solid" href="{AGENDA}">Agendar diagnóstico</a></div>
+      <p class="gm-updated">Última actualización: {HOY_TXT}</p>
+    </div>
+  </section>
+  <main class="gm-main"><div class="container gm-narrow">
     {''.join(secs)}
-    <div class="ctabox"><p>{cta[0]}</p><a class="btn" href="{AGENDA}">{cta[1]}</a></div>
-    {rel}
   </div></main>
-  <footer><div class="wrap">
-    <p>{foot}</p>
-    <p style="margin-top:8px">© Gmarketing S.A.S. (Cali) · Gmarketing USA LLC (Miami) · <a href="mailto:comercial@gmarketing.co">comercial@gmarketing.co</a> · +57 321 6319137</p>
-  </div></footer>
+  <section class="gm-cta"><div class="container">
+    <h2 class="section-title">Agenda tu diagnóstico comercial gratuito</h2>
+    <p>{cta[0]}</p>
+    <a class="btn-neon-solid" href="{AGENDA}">{cta[1]}</a>
+  </div></section>
+  {rel}
+  {CONTACTO}
+  {PIE.replace('__GUIAS__', guias)}
 </body>
 </html>
 """
