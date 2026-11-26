@@ -11,7 +11,8 @@
 
 ## Herramientas
 
-- [Calculadora de costos](https://crmformeta.com/calculadora/)
+- [Calculadora de costo de oportunidad sin CRM](https://crmformeta.com/calculadora/)
+- [Calculadora de precios de WhatsApp Business API por país y tipo de mensaje](https://crmformeta.com/costos_api/)
 - [CRM para WhatsApp y redes sociales](https://crmformeta.com/crm_para_whatsapp/)
 - [Documentación de Kommo CRM](https://crmformeta.com/documentacion/)
 

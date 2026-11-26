@@ -88,3 +88,12 @@ Hallazgos del rastreo para María Camila (texto):
 - /kommo10x/agenda/ no tiene descripción.
 - Varios H1 en una misma página: /documentacion/ (13), /kommo10x/, /calculadora/ y las 4 guías antiguas (2).
 - /crm_para_whatsapp/ se desborda en celular (390 px de pantalla, 420 px de contenido).
+
+## /costos_api/ adaptada a Gmarketing (26-nov-2026)
+
+- Antes: marca "DotsCom Group", teléfono +57 316 9062242, correo de dotscomagency.com, voseo argentino y canonical hacia calculadora.dotsflow.ai.
+- Ahora: marca Gmarketing, WhatsApp +57 321 6319137, comercial@gmarketing.co, español de Colombia, canonical propio, GTM y GA4, Colombia como país inicial. Está en el sitemap y en llms.txt, y se avisó por IndexNow.
+- Lógica nueva: si la fecha de hoy ya pasó la vigencia de la tabla "próxima", esa pasa a ser la vigente. Antes mostraba julio como vigente en noviembre.
+- Las tarifas están dentro del HTML (`const EMBEDDED`, rate card de Meta tomado el 2-sep-2026). **No se actualizan solas.** Meta cambia tarifas el 1 de enero, abril, julio y octubre: revisar developers.facebook.com/docs/whatsapp/pricing antes del 1-ene-2027 y actualizar `EMBEDDED`.
+- Tarifas de Colombia en USD desde el 1-oct-2026: marketing 0,0125; utilidad, autenticación y servicio 0,0008 (primeros 1.000 de servicio al mes gratis).
+- Corregido el borrador /blog/precios-whatsapp-api-2026/: tenía 0,0459 y 0,0029, que eran dírhams de Emiratos (AED), no dólares.

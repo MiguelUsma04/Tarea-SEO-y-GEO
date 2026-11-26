@@ -181,26 +181,26 @@ PAGINAS = [
 {
  "slug": "/blog/precios-whatsapp-api-2026/", "crumb": "Precios de WhatsApp API 2026", "crumbs": [("Guías", "/blog/mejor-crm-whatsapp/")], "kind": "article",
  "title": "Precios de WhatsApp Business API en 2026 para Colombia",
- "desc": "Cuánto cobra Meta por mensaje de WhatsApp Business API en Colombia en 2026: marketing, utilidad, autenticación y servicio, y qué cambió en octubre.",
+ "desc": "Tarifas de WhatsApp Business API en Colombia desde octubre de 2026: marketing USD 0,0125; utilidad, autenticación y servicio USD 0,0008 por mensaje.",
  "h1": "Precios de WhatsApp Business API en 2026 para Colombia",
- "lead": "Meta cobra WhatsApp Business API por mensaje entregado, según el país de quien lo recibe y la categoría de la plantilla. En Colombia, un mensaje de marketing cuesta USD 0,0459 y uno de utilidad o autenticación USD 0,0029. Meta solo cambia tarifas el 1 de enero, abril, julio y octubre.",
- "pend_top": ["Juan Pablo o María Camila: verificar cada tarifa contra el rate card oficial de Meta vigente (developers.facebook.com, sección pricing) y anotar la fecha. Las cifras de este borrador salen de la calculadora /costos_api/, que tiene dos tablas distintas para Colombia y no indica cuál es la vigente."],
+ "lead": "Meta cobra WhatsApp Business API por mensaje entregado, según el país de quien lo recibe y la categoría de la plantilla. En Colombia, desde el 1 de octubre de 2026, un mensaje de marketing cuesta USD 0,0125 y uno de utilidad, autenticación o servicio USD 0,0008. Meta solo cambia tarifas el 1 de enero, abril, julio y octubre.",
+ "pend_top": ["Juan Pablo o María Camila: antes de publicar, abrir developers.facebook.com/docs/whatsapp/pricing y confirmar que las tarifas de Colombia siguen iguales. Las cifras salen del rate card de Meta tomado el 2-sep-2026, el mismo que usa /costos_api/."],
  "sections": [
   {"q": "¿Cuánto cuesta un mensaje de WhatsApp Business API en Colombia?",
-   "a": "En Colombia, un mensaje de marketing cuesta USD 0,0459, y uno de utilidad o de autenticación cuesta USD 0,0029. Los precios son por mensaje entregado, en dólares, sin impuestos y sin lo que cobre el proveedor de software. Las tarifas de utilidad y autenticación bajan por volumen desde 100.000 mensajes al mes.",
+   "a": "En Colombia, un mensaje de marketing cuesta USD 0,0125 y uno de utilidad, autenticación o servicio cuesta USD 0,0008. Los precios son por mensaje entregado, sin impuestos y sin lo que cobre el proveedor de software. Utilidad y autenticación bajan por volumen desde 100.000 mensajes al mes; los primeros 1.000 de servicio son gratis.",
    "more": """<div class="tbl"><table><tr><th>Categoría</th><th>Precio por mensaje (USD)</th><th>Uso</th></tr>
-<tr><td>Marketing</td><td>0,0459</td><td>Promociones, ofertas, reactivación</td></tr>
-<tr><td>Utilidad</td><td>0,0029</td><td>Confirmaciones, recordatorios, estado de pedido</td></tr>
-<tr><td>Autenticación</td><td>0,0029</td><td>Códigos de verificación</td></tr>
-<tr><td>Servicio</td><td>[verificar]</td><td>Respuestas dentro de la ventana de 24 horas</td></tr></table></div>""",
-   "pend": ["Verificar si los mensajes de servicio tienen costo desde octubre de 2026 (una tabla de la calculadora dice gratis y otra USD 0,0029)."]},
+<tr><td>Marketing</td><td>0,0125</td><td>Promociones, ofertas, reactivación</td></tr>
+<tr><td>Utilidad</td><td>0,0008</td><td>Confirmaciones, recordatorios, estado de pedido</td></tr>
+<tr><td>Autenticación</td><td>0,0008</td><td>Códigos de verificación</td></tr>
+<tr><td>Servicio</td><td>0,0008 (primeros 1.000 al mes gratis)</td><td>Respuestas dentro de la ventana de 24 horas</td></tr></table></div>
+<p>Calcula el costo de tu volumen y de otros países en la <a href="/costos_api/">calculadora de precios de WhatsApp Business API</a>.</p>"""},
   {"q": "¿Qué cambió en los precios de WhatsApp API en octubre de 2026?",
-   "a": "El 1 de octubre de 2026 Meta actualizó las tarifas de WhatsApp Business API. El detalle de qué categorías cambiaron y en cuánto para Colombia está en verificación contra el rate card oficial de Meta.",
-   "pend": ["María Camila: redactar los cambios concretos de octubre de 2026 con fuente oficial y reescribir esta respuesta (40 a 60 palabras, empezando con el dato)."]},
+   "a": "Desde el 1 de octubre de 2026 Meta cobra los mensajes de servicio, que antes eran gratis: en Colombia cuestan USD 0,0008, sin descuentos por volumen, y los primeros 1.000 de cada mes no se cobran. También se cobran los avisos de utilidad enviados dentro de la ventana de 24 horas que abre el cliente.",
+   "more": "<p>Sigue siendo gratis la ventana de 72 horas de las conversaciones que empiezan desde un anuncio Click-to-WhatsApp o un botón de Facebook o Instagram. Los mensajes del Meta Business Agent se cobran aparte desde el 1 de agosto de 2026: USD 2 por millón de tokens.</p>"},
   {"q": "¿Quién decide la categoría de cada mensaje?",
-   "a": "Meta decide la categoría al aprobar cada plantilla. Si un aviso de utilidad incluye texto de promoción, Meta lo clasifica como marketing y cuesta unas 15 veces más en Colombia. Por eso conviene separar las plantillas de recordatorio de las de oferta y revisar la categoría aprobada de cada una."},
+   "a": "Meta decide la categoría al aprobar cada plantilla. Si un aviso de utilidad incluye texto de promoción, Meta lo clasifica como marketing y en Colombia cuesta unas 15 veces más: USD 0,0125 contra USD 0,0008. Por eso conviene separar las plantillas de recordatorio de las de oferta y revisar la categoría aprobada de cada una."},
   {"q": "¿Cómo bajar el costo de WhatsApp API?",
-   "a": "El costo baja resolviendo la conversación dentro de la ventana de atención de 24 horas que abre el cliente, en lugar de enviar plantillas nuevas. Un agente de IA que responde al instante mantiene la conversación dentro de esa ventana. También ayuda revisar qué plantillas quedaron aprobadas como marketing.",
+   "a": "El costo baja resolviendo la conversación dentro de la ventana de 24 horas que abre el cliente: cada respuesta de servicio cuesta USD 0,0008 y los primeros 1.000 del mes son gratis, mientras que una plantilla de marketing cuesta USD 0,0125. Un agente de IA que responde al instante mantiene la conversación dentro de esa ventana.",
    "more": '<p>Ver <a href="/agente-ia-whatsapp/">agente de IA para WhatsApp</a>.</p>'},
  ],
  "related": [("/blog/mejor-crm-whatsapp/", "Mejor CRM para WhatsApp"), ("/whatsapp-multiagente/", "WhatsApp multiagente"), ("/agente-ia-whatsapp/", "Agente de IA para WhatsApp")],
