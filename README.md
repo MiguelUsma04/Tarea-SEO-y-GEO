@@ -1,7 +1,7 @@
 # crmformeta.com: plan SEO, GEO y AEO
 
 Tarea en Soporte: `77b2e52b-efdd-43fa-aeee-ffc14c41a060` ("Ejecutar plan SEO, GEO y AEO de crmformeta.com").
-Responsable: Juan Pablo Acosta. Apoyo: María Camila Jaramillo. Aprobación: Carlos Chávez.
+Responsable: Juan Pablo Acosta. Aprobación y contenido: Carlos Chávez (María Camila Jaramillo ya no está en el equipo; sus tareas pasaron a Carlos el 26-nov-2026).
 
 Repo de trabajo del plan. Rutas de los comandos relativas a la raíz del repo.
 
@@ -39,7 +39,7 @@ Después de subir, abre la URL con `?v=123` al final para saltar la caché y rev
 
 ## Pasar un borrador a publicado
 
-1. Revisa que la página no tenga bloques amarillos de PENDIENTE: María Camila los completa y Carlos aprueba precios y cifras.
+1. Revisa que la página no tenga bloques amarillos de PENDIENTE: Carlos los completa y aprueba precios y cifras.
 2. En `generador/paginas.py`, agrega `"draft": False` a la página.
 3. Corre `python3 build.py` y sube el `index.html` de esa página.
 4. Agrega la URL a `publicado/sitemap.xml` y súbelo.
@@ -83,7 +83,7 @@ Cuentas (hecho por Juan Pablo el 26-nov-2026):
 - Prueba de resultados enriquecidos del home: 4 elementos válidos (Empresas locales, Organización, 2 Vídeos), sin errores; avisos no críticos por campos opcionales.
 - Pendiente: prueba de resultados enriquecidos de /kommo-crm/.
 
-Hallazgos del rastreo para María Camila (texto):
+Hallazgos del rastreo de texto (tarea de Carlos):
 - Descripciones de más de 160 caracteres: /kommo10x/ (254), /crm_para_whatsapp/ (310), /documentacion/ (166), /gestion_de_respuestas_de_prospectos/ (290), /como_convertir_el_no_en_si/ (301), /5_razones_cliente_no_compra/ (296).
 - /kommo10x/agenda/ no tiene descripción.
 - Varios H1 en una misma página: /documentacion/ (13), /kommo10x/, /calculadora/ y las 4 guías antiguas (2).

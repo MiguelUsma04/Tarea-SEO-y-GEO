@@ -1,7 +1,7 @@
 """Contenido de los borradores de prioridad 1 (pestaña 'Google orgánico (SEO)' del estudio).
 
 Regla: solo datos ya publicados en crmformeta.com o en el estudio de keywords.
-Todo lo demás va en 'pend' (bloque amarillo visible) para María Camila o Carlos.
+Todo lo demás va en 'pend' (bloque amarillo visible) para Carlos.
 """
 
 CIFRA = "Cifra única de empresas atendidas: el Excel propone «Gold Partner de Kommo desde 2020» y «+260 implementaciones». Hoy el sitio dice 250, 500, 260, 200, 400 y 150, y /kommo10x/ dice «desde 2014». Carlos define una sola."
@@ -104,11 +104,11 @@ PAGINAS = [
  "desc": "Comparativa de Kommo y Leadsales: canales, automatización, IA, precios por usuario y para qué tipo de equipo comercial conviene cada uno.",
  "h1": "Kommo vs Leadsales: cuál conviene para vender por WhatsApp",
  "lead": "Kommo conviene a equipos que atienden por WhatsApp, Instagram, Facebook y web en una sola bandeja y necesitan automatizar con salesbots, IA e integraciones. Leadsales es un CRM mexicano enfocado en WhatsApp para pymes. La decisión depende de cuántos canales usas y de cuánto quieres automatizar.",
- "pend_top": ["María Camila: verificar en leadsales.io cada dato de Leadsales (canales, planes, precios, IA, integraciones) y anotar la fuente y la fecha. Gmarketing es partner de Kommo: dejarlo dicho en la página."],
+ "pend_top": ["Carlos: verificar en leadsales.io cada dato de Leadsales (canales, planes, precios, IA, integraciones) y anotar la fuente y la fecha. Gmarketing es partner de Kommo: dejarlo dicho en la página."],
  "sections": [
   {"q": "¿Cuál es la diferencia principal entre Kommo y Leadsales?",
    "a": "La diferencia principal está en los canales y la automatización. Kommo reúne WhatsApp, Instagram, Facebook Messenger, correo y formularios web en una bandeja, con embudos automáticos, salesbots, agentes de IA y API abierta. Leadsales se enfoca en WhatsApp para pymes.",
-   "pend": ["María Camila: completar con lo que Leadsales ofrece hoy en otros canales e IA, con fuente."]},
+   "pend": ["Carlos: completar con lo que Leadsales ofrece hoy en otros canales e IA, con fuente."]},
   {"q": "¿Cómo se comparan en funciones?", "faq": False,
    "a": "Tabla de comparación por función. La columna de Kommo usa la información de los planes publicados por Kommo.",
    "more": """<div class="tbl"><table>
@@ -122,10 +122,10 @@ PAGINAS = [
 </table></div>"""},
   {"q": "¿Cuál conviene para una clínica, inmobiliaria o rentadora?",
    "a": "Para una clínica, inmobiliaria o rentadora con varios asesores conviene Kommo cuando los leads llegan por más de un canal, cuando hay que agendar citas o visitas y cuando la dirección necesita tableros por asesor. Si el negocio atiende solo por WhatsApp con uno o dos asesores, una herramienta más simple puede alcanzar.",
-   "pend": ["María Camila: agregar un caso de cliente por sector (clínica, inmobiliaria, rentadora) con autorización."]},
+   "pend": ["Carlos: agregar un caso de cliente por sector (clínica, inmobiliaria, rentadora) con autorización."]},
   {"q": "¿Cuánto cuesta cada uno?",
    "a": "Kommo cuesta desde USD 20 por usuario al mes en el plan Básico, USD 30 en Avanzado y USD 45 en Pro, con compra mínima de 6 meses. Un equipo de 5 asesores en Avanzado paga desde USD 150 al mes en licencias. Los precios de Leadsales están en su sitio oficial.",
-   "pend": ["María Camila: precios de Leadsales con fuente y fecha.", "Juan Pablo: confirmar precios de Kommo vigentes el día de publicar."]},
+   "pend": ["Carlos: precios de Leadsales con fuente y fecha.", "Juan Pablo: confirmar precios de Kommo vigentes el día de publicar."]},
  ],
  "related": [("/blog/mejor-crm-whatsapp/", "Mejor CRM para WhatsApp en 2026"), ("/kommo-crm/", "Implementación de Kommo CRM"), ("/whatsapp-multiagente/", "WhatsApp multiagente")],
 },
@@ -136,7 +136,7 @@ PAGINAS = [
  "desc": "Siete criterios para elegir un CRM para WhatsApp en 2026: API oficial, multiagente, embudos, automatización, IA, integraciones y precio por usuario.",
  "h1": "Mejor CRM para WhatsApp en 2026: cómo elegir",
  "lead": "Un CRM para WhatsApp debe conectarse a la API oficial de WhatsApp Business, repartir chats entre varios asesores, mover cada lead por un embudo y medir resultados por vendedor. Gmarketing recomienda Kommo y es partner oficial; esta guía explica los criterios para que compares con cualquier alternativa.",
- "pend_top": ["María Camila: armar la tabla de 5 a 6 CRM (Kommo, Leadsales, Clientify, Callbell, Respond.io, HubSpot) con fuente y fecha por dato. Ver pestaña «Competencia» del estudio."],
+ "pend_top": ["Carlos: armar la tabla de 5 a 6 CRM (Kommo, Leadsales, Clientify, Callbell, Respond.io, HubSpot) con fuente y fecha por dato. Ver pestaña «Competencia» del estudio."],
  "sections": [
   {"q": "¿Qué debe tener un CRM para WhatsApp?",
    "a": "Un CRM para WhatsApp debe tener siete cosas: conexión a la API oficial de WhatsApp Business, bandeja multiagente, embudo de ventas por etapas, automatizaciones y bots, IA para responder y resumir, integraciones con formularios y anuncios, y reportes por vendedor. Sin la API oficial, el número corre riesgo de bloqueo.",
@@ -146,7 +146,7 @@ PAGINAS = [
    "more": '<p>Ver <a href="/kommo-crm/">qué incluye la implementación</a> y <a href="/kommo-crm/#planes">los planes de Kommo</a>.</p>'},
   {"q": "¿Cuáles son las alternativas a Kommo?",
    "a": "Las alternativas que más se buscan en Colombia son Clientify, Callbell y Leadsales. Cada una tiene un enfoque distinto: CRM con marketing, bandeja de atención y CRM centrado en WhatsApp para pymes. La tabla de abajo compara los siete criterios con datos de cada proveedor.",
-   "pend": ["María Camila: tabla comparativa con fuente y fecha por dato."]},
+   "pend": ["Carlos: tabla comparativa con fuente y fecha por dato."]},
   {"q": "¿Cuánto cuesta un CRM para WhatsApp?",
    "a": "Un CRM para WhatsApp cuesta por usuario al mes. En Kommo, el plan Básico arranca en USD 20, el Avanzado en USD 30 y el Pro en USD 45, con compra mínima de 6 meses. A eso se suman los mensajes de WhatsApp Business API, que Meta cobra por mensaje entregado según el país y el tipo de plantilla.",
    "more": '<p>Ver <a href="/blog/precios-whatsapp-api-2026/">precios de WhatsApp Business API en 2026</a>.</p>'},
@@ -171,7 +171,7 @@ PAGINAS = [
    "more": CALC_ASESORES + '<p>¿Quieres saber cuánto pierdes hoy sin CRM? Usa la <a href="/calculadora/">calculadora de costo de oportunidad</a>.</p>'},
   {"q": "¿Se puede usar WhatsApp Business app con varios asesores?",
    "a": "La app de WhatsApp Business admite pocos dispositivos vinculados y no reparte chats ni mide a cada asesor. Para un equipo de 3 o más vendedores, la API oficial conectada a un CRM es la opción estable: permite varios usuarios, automatizaciones y reportes, y sigue las políticas de Meta.",
-   "pend": ["María Camila: confirmar con fuente oficial de Meta cuántos dispositivos admite hoy WhatsApp Business app."]},
+   "pend": ["Carlos: confirmar con fuente oficial de Meta cuántos dispositivos admite hoy WhatsApp Business app."]},
   {"q": "¿Me pueden bloquear el número?",
    "a": "El riesgo de bloqueo baja casi a cero con la API oficial de WhatsApp Business (WABA), porque los mensajes salen por plantillas aprobadas por Meta y siguen sus políticas. El riesgo aumenta cuando se usan herramientas no oficiales o se envían difusiones masivas sin consentimiento desde la app."},
  ],
@@ -184,7 +184,7 @@ PAGINAS = [
  "desc": "Tarifas de WhatsApp Business API en Colombia desde octubre de 2026: marketing USD 0,0125; utilidad, autenticación y servicio USD 0,0008 por mensaje.",
  "h1": "Precios de WhatsApp Business API en 2026 para Colombia",
  "lead": "Meta cobra WhatsApp Business API por mensaje entregado, según el país de quien lo recibe y la categoría de la plantilla. En Colombia, desde el 1 de octubre de 2026, un mensaje de marketing cuesta USD 0,0125 y uno de utilidad, autenticación o servicio USD 0,0008. Meta solo cambia tarifas el 1 de enero, abril, julio y octubre.",
- "pend_top": ["Juan Pablo o María Camila: antes de publicar, abrir developers.facebook.com/docs/whatsapp/pricing y confirmar que las tarifas de Colombia siguen iguales. Las cifras salen del rate card de Meta tomado el 2-sep-2026, el mismo que usa /costos_api/."],
+ "pend_top": ["Juan Pablo o Carlos: antes de publicar, abrir developers.facebook.com/docs/whatsapp/pricing y confirmar que las tarifas de Colombia siguen iguales. Las cifras salen del rate card de Meta tomado el 2-sep-2026, el mismo que usa /costos_api/."],
  "sections": [
   {"q": "¿Cuánto cuesta un mensaje de WhatsApp Business API en Colombia?",
    "a": "En Colombia, un mensaje de marketing cuesta USD 0,0125 y uno de utilidad, autenticación o servicio cuesta USD 0,0008. Los precios son por mensaje entregado, sin impuestos y sin lo que cobre el proveedor de software. Utilidad y autenticación bajan por volumen desde 100.000 mensajes al mes; los primeros 1.000 de servicio son gratis.",
@@ -224,12 +224,12 @@ PAGINAS = [
    "more": """<div class="tbl"><table><tr><th>Plan</th><th>Mensual</th><th>Semestral</th><th>Anual</th><th>Soporte</th></tr>
 <tr><td>N8X</td><td>USD 200</td><td>USD 900</td><td>USD 1.200</td><td>2 horas al mes</td></tr></table></div>
 <p>Sin permanencia en el plan mensual. Los planes semestral y anual se pagan completos al inicio y no tienen devolución si se cancela antes.</p>""",
-   "pend": ["Carlos: definir los combos con Tracking GM y KommoPower GM (home: USD 270; /soluciones_agenticas/: USD 300) antes de agregarlos aquí.", "María Camila: agregar un ejemplo del costo mensual de tokens para un volumen típico (p. ej., 1.000 conversaciones)."]},
+   "pend": ["Carlos: definir los combos con Tracking GM y KommoPower GM (home: USD 270; /soluciones_agenticas/: USD 300) antes de agregarlos aquí.", "Carlos: agregar un ejemplo del costo mensual de tokens para un volumen típico (p. ej., 1.000 conversaciones)."]},
   {"q": "¿Cómo se conecta el agente de IA con Kommo?",
    "a": "El agente se conecta a Kommo con n8n. El cliente escribe por WhatsApp, el mensaje llega a Kommo, n8n se lo pasa al agente y el agente responde, actualiza los campos y mueve la etapa. Para activarlo necesitamos un usuario de soporte en tu Kommo; la cuenta y los datos siguen siendo de tu empresa."},
   {"q": "¿En qué se diferencia de un chatbot?",
    "a": "Un chatbot sigue un árbol de opciones fijo; un agente de IA entiende lo que el cliente escribe, decide la siguiente pregunta y actúa en el CRM. N8X no solo conversa: califica, agenda, cambia la etapa del lead y avisa al asesor cuando la conversación necesita a una persona.",
-   "pend": ["María Camila: agregar dos ejemplos de conversación reales (sin datos del cliente) chatbot vs agente."]},
+   "pend": ["Carlos: agregar dos ejemplos de conversación reales (sin datos del cliente) chatbot vs agente."]},
   {"q": "¿Cuánto tarda en estar funcionando?",
    "a": "El proceso tiene tres pasos: eliges el plan, firmas el contrato y pagas, y el agente queda operando sobre tu CRM con soporte por un grupo de WhatsApp de lunes a viernes, con respuesta en 24 horas o un día hábil.",
    "pend": ["Carlos: definir el tiempo típico de puesta en marcha en días para abrir la respuesta con ese dato."]},
@@ -244,7 +244,7 @@ PAGINAS = [
  "desc": "Cuándo alcanza el agente de IA nativo de WhatsApp Business y cuándo conviene un agente propio conectado a Kommo, con embudo, campos y métricas.",
  "h1": "Meta Business Agent vs agente de IA propio conectado a tu CRM",
  "lead": "El agente de IA nativo de WhatsApp Business sirve para responder preguntas frecuentes dentro de WhatsApp. Un agente propio conectado al CRM además registra cada lead, lo mueve por el embudo, agenda y mide resultados por canal y por asesor. La elección depende de si tu equipo necesita esa trazabilidad.",
- "pend_top": ["María Camila: verificar en la documentación oficial de Meta qué hace hoy el agente nativo (nombre oficial, países disponibles, precio, si se conecta a un CRM) y citar la fuente con fecha."],
+ "pend_top": ["Carlos: verificar en la documentación oficial de Meta qué hace hoy el agente nativo (nombre oficial, países disponibles, precio, si se conecta a un CRM) y citar la fuente con fecha."],
  "sections": [
   {"q": "¿Qué es Meta Business Agent?",
    "a": "Meta Business Agent es el agente de IA que Meta integra en WhatsApp Business para que pequeños negocios respondan de forma automática. Se configura dentro de WhatsApp y atiende las preguntas frecuentes con la información del negocio.",
@@ -257,7 +257,7 @@ PAGINAS = [
    "more": '<p>Ver <a href="/agente-ia-whatsapp/">N8X, agente de IA para WhatsApp</a>.</p>'},
   {"q": "¿Se puede usar ChatGPT en WhatsApp Business API?",
    "a": "Las políticas de Meta distinguen entre chatbots de propósito general y agentes de negocio. Un agente que atiende a los clientes de una empresa sobre sus productos y servicios es un uso de negocio.",
-   "pend": ["María Camila: citar la política vigente de Meta sobre chatbots de propósito general en WhatsApp Business API, con enlace y fecha, y reescribir la respuesta empezando con el dato."]},
+   "pend": ["Carlos: citar la política vigente de Meta sobre chatbots de propósito general en WhatsApp Business API, con enlace y fecha, y reescribir la respuesta empezando con el dato."]},
  ],
  "related": [("/agente-ia-whatsapp/", "Agente de IA para WhatsApp"), ("/blog/precios-whatsapp-api-2026/", "Precios de WhatsApp API 2026"), ("/kommo-crm/", "Implementación de Kommo CRM")],
 },
