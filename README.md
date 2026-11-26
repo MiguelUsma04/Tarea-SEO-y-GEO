@@ -76,11 +76,12 @@ Pendientes técnicos:
 - Borrador /whatsapp-multiagente/: calculadora propia de asesores × plan × meses.
 - Rastreo: `reportes/rastreo-2026-11-26.md`. Cero enlaces internos rotos.
 
-Pendiente de Juan Pablo que requiere entrar a cuentas:
-- Search Console: verificar propiedad de dominio o prefijo `https://crmformeta.com/` y enviar `sitemap.xml`.
-- Bing Webmaster: importar desde Search Console o verificar, y enviar `sitemap.xml`.
-- GA4: grupo de canales personalizado con el canal "IA".
-- Prueba de resultados enriquecidos de Google (search.google.com/test/rich-results) para home, /kommo-crm/ y /agente-ia-whatsapp/.
+Cuentas (hecho por Juan Pablo el 26-nov-2026):
+- Search Console: propiedad de dominio `crmformeta.com` verificada. Sitemap enviado como `https://crmformeta.com/sitemap.xml` (en propiedad de dominio hay que poner la URL completa): correcto, 12 páginas.
+- Bing Webmaster: importado desde Search Console. Sitemap enviado, en procesamiento.
+- GA4 (`G-R05L91RDJD`): grupo de canales "Canales con IA" con el canal "IA" (fuente coincide parcialmente con la regex `chatgpt|openai|perplexity|gemini|claude|copilot|deepseek`), ubicado antes de Referral y Organic Search.
+- Prueba de resultados enriquecidos del home: 4 elementos válidos (Empresas locales, Organización, 2 Vídeos), sin errores; avisos no críticos por campos opcionales.
+- Pendiente: prueba de resultados enriquecidos de /kommo-crm/.
 
 Hallazgos del rastreo para María Camila (texto):
 - Descripciones de más de 160 caracteres: /kommo10x/ (254), /crm_para_whatsapp/ (310), /documentacion/ (166), /gestion_de_respuestas_de_prospectos/ (290), /como_convertir_el_no_en_si/ (301), /5_razones_cliente_no_compra/ (296).
